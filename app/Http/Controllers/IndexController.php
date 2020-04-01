@@ -123,6 +123,7 @@ class IndexController extends Controller
         }
 
         $sale = Sale::create([
+            'reference_no' => $request->get('reference_no'),
             'customer_id' => $customer->id,
             'status' => 1,
         ]);
@@ -146,9 +147,12 @@ class IndexController extends Controller
             'amount' => $sale->products()->sum('amount'),
         ]);
 
-        $sale->update(['payment_id' => $payment->id]);
+        $sale->update([
+                'payment_id' => $payment->id,
+                'total_amount' => $sale->products()->sum('amount'),
+            ]);
 
-        $request->session()->forget(['cart', 'costomer']);
+        $request->session()->forget(['cart', 'customer']);
 
         return response()->json(['status' => 200]);
 

@@ -62,11 +62,17 @@
                     </div>
                 </div>
             </div>
-
+            @php
+                $reference_no ="LSO-00".time();
+            @endphp
             <div class="col-lg-6 col-md-12">
                 <div class="order-details">
                     <div class="order-table table-responsive">
-                        <h3 class="title">Your Order</h3>
+                        <div class="clearfix">
+                            <h3 class="title float-left">Your Order</h3>
+                            <h5 class="float-right mt-1 text-primary">REF : {{$reference_no}}</h5>
+                        </div>
+
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -138,7 +144,7 @@
                         <form action="{{route('place_order')}}" method="post" id="paymentForm">
                             @csrf
                             <input type="hidden" class="bank" name="bank_id" id="bank_id" />
-                            <input type="hidden" name="reference_no" value="">
+                            <input type="hidden" name="reference_no" value="{{$reference_no}}">
                             <div class="form-group mt-3">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
