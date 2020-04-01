@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Sale;
+
 class HomeController extends Controller
 {
     /**
@@ -21,8 +23,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        config(['site.page' => 'sale']);
+        $mod = new Sale();
+        $data = $mod->orderBy('created_at')->paginate(15);
+        return view('backend.index', compact('data'));
+    }
+
+    public function delete_sale($id) {
+        $sale = Sale::find($id);
+        $sale->payment->delete();
+        $sale->customer->delete();
+        $sale->products()->delete();
+        $sale->delete();
+        return back()->with('success', 'Deleted Successfully');
     }
 }

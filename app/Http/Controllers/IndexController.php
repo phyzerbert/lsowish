@@ -77,6 +77,9 @@ class IndexController extends Controller
     }
 
     public function input_customer(Request $request) {
+        if (!$request->session()->exists('cart')) {
+            return redirect(route('index'));
+        }
         return view('frontend.customer');
     }
 
@@ -94,6 +97,9 @@ class IndexController extends Controller
     }
 
     public function checkout(Request $request) {
+        if (!$request->session()->exists('customer')) {
+            return redirect(route('input_customer'));
+        }
         return view('frontend.checkout');
     }
 
@@ -138,6 +144,8 @@ class IndexController extends Controller
             'status' => 1,
             'amount' => $sale->products()->sum('amount'),
         ]);
+
+        $sale->update(['payment_id' => $payment->id]);
 
         $request->session()->forget(['cart', 'costomer']);
 

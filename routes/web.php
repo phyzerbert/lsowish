@@ -33,3 +33,11 @@ Route::post('/save_customer', 'IndexController@save_customer')->name('save_custo
 Route::get('/checkout', 'IndexController@checkout')->name('checkout');
 
 Route::post('/place_order', 'IndexController@place_order')->name('place_order');
+
+// ******** Admin Dashboard **********
+Route::get('product/index', 'ProductController@index')->name('admin.product');
+
+
+
+Route::get('sale/index', 'HomeController@sales')->name('admin.sale');
+Route::get('sale/delete/{id}', 'HomeController@delete_sale')->name('sale.delete');

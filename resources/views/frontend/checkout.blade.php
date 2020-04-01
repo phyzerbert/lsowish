@@ -156,7 +156,12 @@
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control amount" name="amount" readonly placeholder="Amount" />
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class='bx bx-money'></i></span>
+                                    </div>
+                                    <input type="text" class="form-control amount" name="amount" readonly placeholder="Amount" />
+                                </div>
                             </div>
                             <div class="form-group mt-3">
                                 <button type="submit" class="btn btn-primary btn-block mt-2" id="btn_submit">Submit</button>
