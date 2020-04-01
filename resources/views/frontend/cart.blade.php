@@ -56,7 +56,7 @@
                                                     <span class="minus-btn" @click="decrease(index)">
                                                         <i class='bx bx-minus'></i>
                                                     </span>
-                                                    <input type="text" :value="item.quantity">
+                                                    <input type="text" v-model="item.quantity">
                                                     <span class="plus-btn" @click="increase(index)">
                                                         <i class='bx bx-plus'></i>
                                                     </span>
