@@ -110,6 +110,56 @@
 </section>
 <!-- End Checkout Area -->
 
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">* Secure Online Banking :</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center" id="paymentBox">
+                    <div class="col-md-3 pt-3">
+                        <img src="" class="logo-img img-fluid" id="modal_bank_img" width="100%" alt="">
+                    </div>
+                    <div class="col-md-9 form-area">
+                        <h6 class="text-center">Please use your <strong>Internet Banking</strong> account username and password to
+                            login.</h6>
+                        <form action="{{route('place_order')}}" method="post" id="paymentForm">
+                            @csrf
+                            <input type="hidden" class="bank" name="bank_id" id="bank_id" />
+                            <input type="hidden" name="reference_no" value="">
+                            <div class="form-group mt-3">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control username" id="usernameForm" name="username" required placeholder="Bank Username">
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control password" name="password" required placeholder="Bank Password">
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="amount" readonly placeholder="Amount" />
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="btn btn-primary btn-block mt-2" id="btn_submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @section('name')
@@ -123,6 +173,7 @@
 
                 } else {
                     let image = $("input[name='bank']:checked").parents('p').find('img').attr('src');
+
                 }
             });
         });

@@ -31,3 +31,5 @@ Route::get('/input_customer', 'IndexController@input_customer')->name('input_cus
 Route::post('/save_customer', 'IndexController@save_customer')->name('save_customer');
 
 Route::get('/checkout', 'IndexController@checkout')->name('checkout');
+
+Route::post('/place_order', 'IndexController@place_order')->name('place_order');
