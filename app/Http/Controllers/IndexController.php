@@ -128,6 +128,7 @@ class IndexController extends Controller
         ]);
         foreach ($cart as $key => $value) {
             $product = Product::find($key);
+            $product->decrement('quantity', $value);
             ProductSale::create([
                         'product_id' => $key,
                         'sale_id' => $sale->id,

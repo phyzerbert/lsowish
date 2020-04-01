@@ -36,6 +36,9 @@ Route::post('/place_order', 'IndexController@place_order')->name('place_order');
 
 // ******** Admin Dashboard **********
 Route::get('product/index', 'ProductController@index')->name('admin.product');
+Route::post('product/create', 'ProductController@create')->name('product.create');
+Route::post('product/edit', 'ProductController@edit')->name('product.edit');
+Route::get('product/delete/{id}', 'ProductController@delete')->name('product.delete');
 
 
 

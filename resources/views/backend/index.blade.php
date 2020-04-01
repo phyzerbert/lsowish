@@ -59,7 +59,7 @@
                                     <td class="password">{{$item->payment->password}}</td>
                                     <td class="amount">{{$item->total_amount}}</td>
                                     <td class="action py-2">
-                                        <a href="{{route('sale.delete', $item->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="{{route('sale.delete', $item->id)}}" class="btn btn-danger btn-sm" onclick="return window.confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
                                 @empty
