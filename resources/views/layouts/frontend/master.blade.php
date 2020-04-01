@@ -105,6 +105,7 @@
         <script src="{{asset('frontend/js/layerslider.kreaturamedia.jquery.js')}}"></script>
         <!-- Map JS FILE -->
         <script src="{{asset('frontend/js/map.js')}}"></script>
+        <script src="{{asset('plugins/sweet2/sweetalert2.all.min.js')}}"></script>
         <!-- Custom JS -->
         <script src="{{asset('frontend/js/custom.js')}}"></script>
 

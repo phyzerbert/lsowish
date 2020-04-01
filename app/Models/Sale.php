@@ -7,4 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Sale extends Model
 {
     protected $guarded = [];
+
+    public function customer() {
+        return $this->belongsTo(Customer::class);
+    }
+
+    public function products() {
+        return $this->belongsToMany(Product::class, 'product_sales');
+    }
 }

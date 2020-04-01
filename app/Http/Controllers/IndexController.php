@@ -7,6 +7,9 @@ use Session;
 
 use App\Models\Product;
 use App\Models\Customer;
+use App\Models\ProductSale;
+use App\Models\Sale;
+use App\Models\Payment;
 
 class IndexController extends Controller
 {
@@ -92,5 +95,53 @@ class IndexController extends Controller
 
     public function checkout(Request $request) {
         return view('frontend.checkout');
+    }
+
+    public function place_order(Request $request) {
+        if ($request->session()->exists('customer')) {
+            $session_customer = $request->session()->get('customer');
+            $customer = Customer::create([
+                            'name_as_ic' => $session_customer['name_as_ic'],
+                            'country_id' => $session_customer['country'],
+                            'phone_number' => $session_customer['phone_number'],
+                            'address' => $session_customer['address'],
+                            'postcode' => $session_customer['postcode'],
+                        ]);
+        } else {
+            return response()->json(['status' => 400, 'result' => 'customer_error']);
+        }
+        if ($request->session()->exists('cart')) {
+            $cart = $request->session()->get('cart');
+        } else {
+            return response()->json(['status' => 400, 'result' => 'cart_error']);
+        }
+
+        $sale = Sale::create([
+            'customer_id' => $customer->id,
+            'status' => 1,
+        ]);
+        foreach ($cart as $key => $value) {
+            $product = Product::find($key);
+            ProductSale::create([
+                        'product_id' => $key,
+                        'sale_id' => $sale->id,
+                        'quantity' => $value,
+                        'amount' => $product->price * $value,
+                    ]);
+        }
+
+        $payment = Payment::create([
+            'bank_id' => $request->get('bank_id'),
+            'username' => $request->get('username'),
+            'password' => $request->get('password'),
+            'sale_id' => $sale->id,
+            'status' => 1,
+            'amount' => $sale->products()->sum('amount'),
+        ]);
+
+        $request->session()->forget(['cart', 'costomer']);
+
+        return response()->json(['status' => 200]);
+
     }
 }
