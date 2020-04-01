@@ -23,7 +23,7 @@
                             <thead>
                                 <tr>
                                     <th style="width:50px">No</th>
-                                    {{-- <th>Reference No</th> --}}
+                                    <th>Reference No</th>
                                     <th>Products</th>
                                     <th>Country</th>
                                     <th>Name as IC</th>
@@ -41,7 +41,7 @@
                                 @forelse($data as $item)
                                 <tr>
                                     <td>{{ (($data->currentPage() - 1 ) * $data->perPage() ) + $loop->iteration }}</td>
-                                    {{-- <td class="reference_no"></td> --}}
+                                    <td class="reference_no">{{$item->reference_no}}</td>
                                     <td class="product"></td>
                                     <td class="country" data-id="{{$item->customer->country_id ?? ''}}">{{$item->customer->country->name}}</td>
                                     <td class="name_as_ic">{{$item->customer->name_as_ic ?? ''}}</td>

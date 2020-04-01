@@ -13,7 +13,7 @@
     </a>
     <div class="login-box">
         <form class="login-form" method="POST" action="{{ route('login') }}">
-            <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>{{__('page.sign_in')}}</h3>
+            <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>Sign In</h3>
             @error('status')
             <p class="invalid-feedback text-center d-block mb-0" role="alert">
                 <strong>{{ $message }}</strong>

@@ -35,7 +35,7 @@ class HomeController extends Controller
         $sale = Sale::find($id);
         $sale->payment->delete();
         $sale->customer->delete();
-        $sale->products()->delete();
+        ProductSale::where('sale_id', $id)->delete();
         $sale->delete();
         return back()->with('success', 'Deleted Successfully');
     }
