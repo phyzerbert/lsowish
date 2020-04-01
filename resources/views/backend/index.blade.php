@@ -42,7 +42,7 @@
                                 <tr>
                                     <td>{{ (($data->currentPage() - 1 ) * $data->perPage() ) + $loop->iteration }}</td>
                                     <td class="reference_no">{{$item->reference_no}}</td>
-                                    <td class="product"></td>
+                                    <td class="product"><a href="javascript:;" class="btn btn-link btn-product" data-id="{{$item->id}}">View</a></td>
                                     <td class="country" data-id="{{$item->customer->country_id ?? ''}}">{{$item->customer->country->name}}</td>
                                     <td class="name_as_ic">{{$item->customer->name_as_ic ?? ''}}</td>
                                     <td class="phone_number">{{$item->customer->phone_number ?? ''}}</td>
@@ -64,7 +64,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="10" class="text-center">No Data</td>
+                                    <td colspan="20" class="text-center">No Data</td>
                                 </tr>
                                 @endforelse
                             </tbody>
@@ -83,4 +83,6 @@
             </div>
         </div>
     </div>
+
+
 @endsection

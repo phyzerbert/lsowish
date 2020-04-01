@@ -16,6 +16,7 @@ class ProductsTableSeeder extends Seeder
         Product::create([
             'name' => '3ply Mask',
             'price' => '5.00',
+            'quantity' => 5000,
             'image' => 'images/product/3ply_mask.jpg',
         ]);
 
@@ -34,7 +35,7 @@ class ProductsTableSeeder extends Seeder
         ]);
 
         Product::create([
-            'name' => 'Defend Health Tag',
+            'name' => 'Defend Healthtag',
             'price' => '5.00',
             'quantity' => 5000,
             'image' => 'images/product/defend_health_tag.jpg',

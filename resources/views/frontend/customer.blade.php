@@ -5,7 +5,7 @@
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
-                <h2>Checkout</h2>
+                <h2>Billing Details</h2>
                 <ul>
                     <li>
                         <a href="{{route('index')}}">Home</a>
