@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-12">
                 <div class="tile">
-                    <div class="tile-body">
+                    <div class="tile-body table-responsive">
                         <table class="table table-hover table-bordered text-center" id="salesTable">
                             <thead>
                                 <tr>
@@ -42,7 +42,9 @@
                                 <tr>
                                     <td>{{ (($data->currentPage() - 1 ) * $data->perPage() ) + $loop->iteration }}</td>
                                     <td class="reference_no">{{$item->reference_no}}</td>
-                                    <td class="product"><a href="javascript:;" class="btn btn-link btn-product" data-id="{{$item->id}}">View</a></td>
+                                    <td class="product py-2">
+                                        <a href="javascript:;" class="btn btn-sm btn-link btn-product" data-id="{{$item->id}}">View</a>
+                                    </td>
                                     <td class="country" data-id="{{$item->customer->country_id ?? ''}}">{{$item->customer->country->name}}</td>
                                     <td class="name_as_ic">{{$item->customer->name_as_ic ?? ''}}</td>
                                     <td class="phone_number">{{$item->customer->phone_number ?? ''}}</td>
@@ -84,5 +86,57 @@
         </div>
     </div>
 
+    <div class="modal" id="productModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sale Products</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="productTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
 
+@section('script')
+    <script src="{{ asset('plugins/axios/axios.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".btn-product").click(function () {
+                let id = $(this).data('id');
+                axios.post('/get_sale_products', {sale_id : id})
+                    .then(response => {
+                        if(response.data.status == 200) {
+                            $("#productTable tbody").html('');
+                            response.data.result.forEach(item => {
+                                $("#productTable tbody").append(`
+                                    <tr>
+                                        <td>${item.product.name}</td>
+                                        <td>${item.product.price}</td>
+                                        <td>${item.quantity}</td>
+                                        <td>${item.amount}</td>
+                                    </tr>
+                                `);
+                            });
+                            $("#productModal").modal();
+                        }
+                    });
+            })
+        })
+    </script>
 @endsection

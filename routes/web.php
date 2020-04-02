@@ -44,3 +44,5 @@ Route::get('product/delete/{id}', 'ProductController@delete')->name('product.del
 
 Route::get('sale/index', 'HomeController@sales')->name('admin.sale');
 Route::get('sale/delete/{id}', 'HomeController@delete_sale')->name('sale.delete');
+
+Route::post('/get_sale_products', 'HomeController@get_sale_products')->name('get_sale_products');

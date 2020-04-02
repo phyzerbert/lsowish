@@ -8,7 +8,7 @@
         <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li><a class="dropdown-item" href="#"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                ><i class="fa fa-sign-out fa-lg"></i> {{__('page.sign_out')}}</a></li>
+                ><i class="fa fa-sign-out fa-lg"></i> Sign Out</a></li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
         </ul>
     </li>

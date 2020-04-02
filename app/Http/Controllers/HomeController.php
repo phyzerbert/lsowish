@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Sale;
+use App\Models\Product;
+use App\Models\ProductSale;
 
 class HomeController extends Controller
 {
@@ -38,5 +40,13 @@ class HomeController extends Controller
         ProductSale::where('sale_id', $id)->delete();
         $sale->delete();
         return back()->with('success', 'Deleted Successfully');
+    }
+
+    public function get_sale_products(Request $request) {
+        $data = [
+            'status' => 200,
+            'result' => ProductSale::with('product')->where('sale_id', $request->get('sale_id'))->get(),
+        ];
+        return response()->json($data);
     }
 }
