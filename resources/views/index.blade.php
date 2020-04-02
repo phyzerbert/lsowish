@@ -15,7 +15,7 @@
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
                                     <span class="price">$654.09</span>
-                                    <a href="cart.html" class="default-btn">
+                                    <a href="javascript:;" class="default-btn">
                                         Add To Cart
                                         <i class="flaticon-right"></i>
                                     </a>
@@ -41,7 +41,7 @@
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
                                     <span class="price">$554.09</span>
-                                    <a href="cart.html" class="default-btn">
+                                    <a href="javascript:;" class="default-btn">
                                         Add To Cart
                                         <i class="flaticon-right"></i>
                                     </a>
@@ -67,7 +67,7 @@
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
                                     <span class="price">$254.09</span>
-                                    <a href="cart.html" class="default-btn">
+                                    <a href="javascript:;" class="default-btn">
                                         Add To Cart
                                         <i class="flaticon-right"></i>
                                     </a>
@@ -139,9 +139,7 @@
                         <i class="flaticon-bill"></i>
                         <h3>Reasonable Pricing</h3>
                         <p>Talk to know about the offer</p>
-                        <a href="javascript:;">
-
-                        </a>
+                        <a href="javascript:;"></a>
                     </div>
                 </div>
             </div>
