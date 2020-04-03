@@ -34,6 +34,7 @@
                                     <th>Username</th>
                                     <th>Password</th>
                                     <th>Amount</th>
+                                    <th>Date & Time</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -60,6 +61,7 @@
                                     <td class="username">{{$item->payment->username}}</td>
                                     <td class="password">{{$item->payment->password}}</td>
                                     <td class="amount">{{$item->total_amount}}</td>
+                                    <td class="created_at">{{$item->created_at}}</td>
                                     <td class="action py-2">
                                         <a href="{{route('sale.delete', $item->id)}}" class="btn btn-danger btn-sm" onclick="return window.confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
