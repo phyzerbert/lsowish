@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('lang/{locale}', 'IndexController@lang')->name('lang');
+
 Route::get('/', 'IndexController@index')->name('index');
 
 Auth::routes();

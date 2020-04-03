@@ -5,14 +5,14 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h2>Checkout</h2>
+            <h2>{{__('page.checkout')}}</h2>
             <ul>
                 <li>
-                    <a href="index.html">
-                        Home
+                    <a href="{{url('/')}}">
+                        {{__('page.home')}}
                     </a>
                 </li>
-                <li>Checkout</li>
+                <li>{{__('page.checkout')}}</li>
             </ul>
         </div>
     </div>
@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="billing-details">
-                    <h3 class="title">Direct Bank Transfer</h3>
+                    <h3 class="title">{{__('page.direct_bank_transfer')}}</h3>
 
                     <div class="row">
                         <div class="col-12 payment-box">
@@ -69,15 +69,15 @@
                 <div class="order-details">
                     <div class="order-table table-responsive">
                         <div class="clearfix">
-                            <h3 class="title float-left">Your Order</h3>
+                            <h3 class="title float-left">{{__('page.your_order')}}</h3>
                             <h5 class="float-right mt-1 text-primary">REF : {{$reference_no}}</h5>
                         </div>
 
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">Product Name</th>
-                                    <th scope="col">Total</th>
+                                    <th scope="col">{{__('page.product_name')}}</th>
+                                    <th scope="col">{{__('page.total')}}</th>
                                 </tr>
                             </thead>
 
@@ -106,7 +106,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td class="font-weight-bold text-right">Total Amount : </td>
+                                    <td class="font-weight-bold text-right">{{__('page.total_amount')}} : </td>
                                     <td class="font-weight-bold" style="padding: 12px 20px;">$<span id="total_amount">{{$total_amount}}</span></td>
                                 </tr>
                             </tfoot>
@@ -114,7 +114,7 @@
                     </div>
 
                     <div class="payment-box">
-                        <a href="javascript:;" class="default-btn" id="btn_place" >Place Order
+                        <a href="javascript:;" class="default-btn" id="btn_place" >{{__('page.place_order')}}
                             <i class="flaticon-right"></i>
                         </a>
                     </div>
@@ -129,7 +129,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">* Secure Online Banking :</h4>
+                <h4 class="modal-title">* {{__('page.secure_online_banking')}} :</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -139,8 +139,7 @@
                         <img src="" class="logo-img img-fluid" id="modal_bank_img" width="100%" alt="">
                     </div>
                     <div class="col-md-9 form-area">
-                        <h6 class="text-center">Please use your <strong>Internet Banking</strong> account username and password to
-                            login.</h6>
+                        <h6 class="text-center">{!! __('page.bank_modal_message') !!}</h6>
                         <form action="{{route('place_order')}}" method="post" id="paymentForm">
                             @csrf
                             <input type="hidden" class="bank" name="bank_id" id="bank_id" />
@@ -150,7 +149,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class='bx bxs-user'></i></span>
                                     </div>
-                                    <input type="text" class="form-control username" id="usernameForm" name="username" required placeholder="Bank Username">
+                                    <input type="text" class="form-control username" id="usernameForm" name="username" required placeholder="{{__('page.bank_username')}}">
                                 </div>
                             </div>
                             <div class="form-group mt-3">
@@ -158,7 +157,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class='bx bxs-lock'></i></span>
                                     </div>
-                                    <input type="password" class="form-control password" name="password" required placeholder="Bank Password">
+                                    <input type="password" class="form-control password" name="password" required placeholder="{{__('page.bank_password')}}">
                                 </div>
                             </div>
                             <div class="form-group mt-3">
@@ -166,11 +165,11 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class='bx bx-money'></i></span>
                                     </div>
-                                    <input type="text" class="form-control amount" name="amount" readonly placeholder="Amount" />
+                                    <input type="text" class="form-control amount" name="amount" readonly placeholder="{{__('page.total_amount')}}" />
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <button type="submit" class="btn btn-primary btn-block mt-2" id="btn_submit">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-block mt-2" id="btn_submit">{{__('page.submit')}}</button>
                             </div>
                         </form>
                     </div>

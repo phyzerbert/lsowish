@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use App;
 
 use App\Models\Product;
 use App\Models\Customer;
@@ -156,5 +157,11 @@ class IndexController extends Controller
 
         return response()->json(['status' => 200]);
 
+    }
+
+    public function lang($locale) {
+        App::setLocale($locale);
+        session()->put('locale', $locale);
+        return redirect()->back();
     }
 }

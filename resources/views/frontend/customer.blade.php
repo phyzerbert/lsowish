@@ -5,12 +5,12 @@
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
-                <h2>Billing Details</h2>
+                <h2>{{__('page.billing_details')}}</h2>
                 <ul>
                     <li>
-                        <a href="{{route('index')}}">Home</a>
+                        <a href="{{route('index')}}">{{__('page.home')}}</a>
                     </li>
-                    <li>Billing Details</li>
+                    <li>{{__('page.billing_details')}}</li>
                 </ul>
             </div>
         </div>
@@ -23,13 +23,13 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-12">
                     <div class="billing-details">
-                        <h3 class="title">Billing Details</h3>
+                        <h3 class="title">{{__('page.billing_details')}}</h3>
                         <form method="POST" action="{{route('save_customer')}}">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <label>Country <span class="required">*</span></label>
+                                        <label>{{__('page.country')}} <span class="required">*</span></label>
                                         @php
                                             $countries = \App\Models\Country::all();
                                         @endphp
@@ -48,7 +48,7 @@
 
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <label>Name as IC <span class="required">*</span></label>
+                                        <label>{{__('page.name_as_ic')}} <span class="required">*</span></label>
                                         <input type="text" class="form-control" name="name_as_ic" required />
                                         @error('country')
                                         <span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>
@@ -58,7 +58,7 @@
 
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
-                                        <label>Phone Number <span class="required">*</span></label>
+                                        <label>{{__('page.phone_number')}} <span class="required">*</span></label>
                                         <input type="text" class="form-control" name="phone_number">
                                         @error('phone_number')
                                         <span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>
@@ -68,7 +68,7 @@
 
                                 <div class="col-lg-12 col-md-6">
                                     <div class="form-group">
-                                        <label>Address <span class="required">*</span></label>
+                                        <label>{{__('page.address')}} <span class="required">*</span></label>
                                         <input type="text" name="address" class="form-control" required>
                                         @error('address')
                                         <span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>
@@ -78,7 +78,7 @@
 
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <label>Postcode</label>
+                                        <label>{{__('page.postcode')}}</label>
                                         <input type="text" name="postcode" class="form-control">
                                         @error('postcode')
                                         <span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-right">
-                                    <button type="submit" class="btn btn-primary btn-lg" style="width: 150px">Save</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" style="width: 150px">{{__('page.save')}}</button>
                                 </div>
                             </div>
                         </form>

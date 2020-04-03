@@ -47,40 +47,31 @@
 
                             <!-- Start Other Option -->
                             <div class="others-option ml-auto">
+                                @php $locale = session()->get('locale'); @endphp
                                 <div class="flag-wrap">
                                     <ul>
                                         <li class="flag-item-top">
                                             <a href="#" class="flag-bar">
-                                                <img src="{{asset('frontend/img/demo-watch/flag/1.png')}}" alt="Image">
-                                                <span>United States</span>
+                                                @switch($locale)
+                                                    @case('en')
+                                                        <img src="{{asset('images/flag/en.png')}}" alt="English"><span>English</span>
+                                                        @break
+                                                    @case('zh')
+                                                        <img src="{{asset('images/flag/zh.png')}}" alt="简体中文"><span>简体中文</span>
+                                                        @break
+                                                    @default
+                                                        <img src="{{asset('images/flag/en.png')}}" alt="English"><span>English</span>
+                                                @endswitch
                                             </a>
                                             <ul class="flag-item-bottom">
                                                 <li class="flag-item">
-                                                    <a href="#" class="flag-link">
-                                                        <img src="{{asset('frontend/img/demo-watch/flag/2.png')}}" alt="Image"> Canada
+                                                    <a href="{{route('lang', 'en')}}" class="flag-link">
+                                                        <img src="{{asset('images/flag/en.png')}}" alt="English"> English
                                                     </a>
                                                 </li>
                                                 <li class="flag-item">
-                                                    <a href="#" class="flag-link">
-                                                        <img src="{{asset('frontend/img/demo-watch/flag/3.png')}}" alt="Image">
-                                                        Australia
-                                                    </a>
-                                                </li>
-                                                <li class="flag-item">
-                                                    <a href="#" class="flag-link">
-                                                        <img src="{{asset('frontend/img/demo-watch/flag/4.png')}}" alt="Image"> Germany
-                                                    </a>
-                                                </li>
-                                                <li class="flag-item">
-                                                    <a href="#" class="flag-link">
-                                                        <img src="{{asset('frontend/img/demo-watch/flag/5.png')}}" alt="Image">
-                                                        Argentina
-                                                    </a>
-                                                </li>
-                                                <li class="flag-item">
-                                                    <a href="#" class="flag-link">
-                                                        <img src="{{asset('frontend/img/demo-watch/flag/6.png')}}" alt="Image"> United
-                                                        Kingdom
+                                                    <a href="{{route('lang', 'zh')}}" class="flag-link">
+                                                        <img src="{{asset('images/flag/zh.png')}}" alt="简体中文"> 简体中文
                                                     </a>
                                                 </li>
                                             </ul>

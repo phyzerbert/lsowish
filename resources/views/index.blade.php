@@ -151,8 +151,7 @@
     <section class="discover-products-area pb-100">
         <div class="container">
             <div class="section-title watch-section-title">
-                <h2>Our Products</h2>
-                <p>Exclusive styles only available at the fact</p>
+                <h2>{{__('page.our_products')}}</h2>
             </div>
             @php
                 $products = \App\Models\Product::all();
@@ -175,7 +174,7 @@
                             </div>
                             <div class="purchase-bar">
                                 <a href="javascript:;" class="default-btn btn-add-product" data-id="{{$item->id}}">
-                                    Add To Cart
+                                    {{__('page.add_to_cart')}}
                                     <i class="flaticon-right"></i>
                                 </a>
                             </div>

@@ -27,11 +27,11 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Product</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Unit Price</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Total</th>
+                                            <th scope="col">{{__('page.product')}}</th>
+                                            <th scope="col">{{__('page.name')}}</th>
+                                            <th scope="col">{{__('page.price')}}</th>
+                                            <th scope="col">{{__('page.quantity')}}</th>
+                                            <th scope="col">{{__('page.total')}}</th>
                                         </tr>
                                     </thead>
 
@@ -84,14 +84,14 @@
                                     <div class="col-lg-7 col-sm-7 col-md-7">
                                         <div class="continue-shopping-box">
                                             <a href="{{route('index')}}" class="default-btn page-btn">
-                                                Continue Shopping
+                                                {{__('page.continue_shopping')}}
                                             </a>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-5 col-sm-5 col-md-5 text-right">
                                         <a href="javascript:;" class=" default-btn page-btn" @click="saveCart()">
-                                            Proceed To CheckOut
+                                            {{__('page.proceed_to_checkout')}}
                                         </a>
                                     </div>
                                 </div>
