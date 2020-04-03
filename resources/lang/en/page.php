@@ -41,5 +41,10 @@ return [
     'submit' => 'Submit',
     'secure_online_banking' => 'Secure Online Banking',
     'bank_modal_message' => 'Please use your <strong>Internet Banking</strong> account username and password to login.',
+    'limited_time_offers' => 'Limited Time Offers',
+    '24_7_client_support' => '24/7 Client Support',
+    'reasonable_pricing' => 'Reasonable Pricing',
+    'talk_to_know_about_the_offer' => 'Talk to know about the offer',
+    'claim_offer' => 'Claim Offer',
 
 ];

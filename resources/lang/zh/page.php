@@ -40,6 +40,11 @@ return [
     'bank_password' => '银行密码',
     'submit' => '提交',
     'secure_online_banking' => '安全的网上银行',
-    'bank_modal_message' => '请使用您的<strong>网上银行</ strong>帐户用户名和密码登录。'
+    'bank_modal_message' => '请使用您的<strong>网上银行</ strong>帐户用户名和密码登录。',
+    'limited_time_offers' => '限时优惠',
+    '24_7_client_support' => '24/7客户支持',
+    'reasonable_pricing' => '合理的定价',
+    'talk_to_know_about_the_offer' => '谈论要约',
+    'claim_offer' => '索赔报价',
 
 ];

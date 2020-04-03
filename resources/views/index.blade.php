@@ -117,18 +117,18 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-service">
                         <i class="flaticon-offer"></i>
-                        <h3>Limited Time Offers</h3>
-                        <p>Talk to know about the offer</p>
+                        <h3>{{__('page.limited_time_offers')}}</h3>
+                        <p>{{__('page.talk_to_know_about_the_offer')}}</p>
                         <a href="javascript:;">
-                            Claim offer
+                            {{__('page.claim_offer')}}
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-service">
                         <i class="flaticon-trolley"></i>
-                        <h3>24/7 Client Support</h3>
-                        <p>Talk to know about the offer</p>
+                        <h3>{{__('page.24_7_client_support')}}</h3>
+                        <p>{{__('page.talk_to_know_about_the_offer')}}</p>
                         <a href="tel:+123 456 789">
                             +123 456 789
                         </a>
@@ -137,8 +137,8 @@
                 <div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
                     <div class="single-service">
                         <i class="flaticon-bill"></i>
-                        <h3>Reasonable Pricing</h3>
-                        <p>Talk to know about the offer</p>
+                        <h3>{{__('page.reasonable_pricing')}}</h3>
+                        <p>{{__('page.talk_to_know_about_the_offer')}}</p>
                         <a href="javascript:;"></a>
                     </div>
                 </div>
