@@ -48,7 +48,7 @@
                                             </td>
 
                                             <td class="product-price">
-                                                <span class="unit-amount">@{{item.product.price}}</span>
+                                                <span class="unit-amount">RM @{{item.product.price}}</span>
                                             </td>
 
                                             <td class="product-quantity">
@@ -76,7 +76,7 @@
                             </div>
 
                             <div class="cart-total mt-3 text-right font-weight-bold">
-                                Total <span class="ml-3" style="font-size: 20px"><b>$<span>@{{get_total}}</span></b></span>
+                                Total <span class="ml-3" style="font-size: 20px"><b>RM <span>@{{get_total}}</span></b></span>
                             </div>
 
                             <div class="cart-buttons">

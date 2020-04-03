@@ -14,7 +14,7 @@
                                 <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
-                                    <span class="price">$654.09</span>
+                                    <span class="price">RM 654</span>
                                     <a href="javascript:;" class="default-btn">
                                         Add To Cart
                                         <i class="flaticon-right"></i>
@@ -40,7 +40,7 @@
                                 <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
-                                    <span class="price">$554.09</span>
+                                    <span class="price">RM 554</span>
                                     <a href="javascript:;" class="default-btn">
                                         Add To Cart
                                         <i class="flaticon-right"></i>
@@ -66,7 +66,7 @@
                                 <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
-                                    <span class="price">$254.09</span>
+                                    <span class="price">RM 254</span>
                                     <a href="javascript:;" class="default-btn">
                                         Add To Cart
                                         <i class="flaticon-right"></i>
@@ -170,7 +170,7 @@
                             </div>
                             <div class="product-content">
                                 <h3>{{$item->name}}</h3>
-                                <span class="price">${{$item->price}}</span>
+                                <span class="price">RM{{$item->price}}</span>
                             </div>
                             <div class="purchase-bar">
                                 <a href="javascript:;" class="default-btn btn-add-product" data-id="{{$item->id}}">

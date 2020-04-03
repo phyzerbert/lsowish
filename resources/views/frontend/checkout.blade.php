@@ -98,7 +98,7 @@
                                         </td>
 
                                         <td class="product-total">
-                                            <span class="subtotal-amount">${{$amount}}</span>
+                                            <span class="subtotal-amount">RM {{$amount}}</span>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -107,7 +107,7 @@
                             <tfoot>
                                 <tr>
                                     <td class="font-weight-bold text-right">{{__('page.total_amount')}} : </td>
-                                    <td class="font-weight-bold" style="padding: 12px 20px;">$<span id="total_amount">{{$total_amount}}</span></td>
+                                    <td class="font-weight-bold" style="padding: 12px 20px;">RM <span id="total_amount">{{$total_amount}}</span></td>
                                 </tr>
                             </tfoot>
                         </table>
