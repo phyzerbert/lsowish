@@ -46,5 +46,9 @@ return [
     'reasonable_pricing' => '合理的定价',
     'talk_to_know_about_the_offer' => '谈论要约',
     'claim_offer' => '索赔报价',
+    'about_us' => '关于我们',
+    'warranty' => '保证',
+    'all_rights_reserved' => '版权所有',
+    'stay_in_touch' => '保持联系',
 
 ];

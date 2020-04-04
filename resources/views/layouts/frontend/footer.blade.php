@@ -1,74 +1,63 @@
 <!-- Start Footer Top Area -->
+@php
+    $setting = \App\Models\Setting::first();
+@endphp
 <footer class="footer-top-area pt-100 pb-70">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="single-widget">
                     <img src="{{asset('frontend/img/demo-watch/footer-logo.png')}}" alt="Image">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla facere ex, quasi pariatur unde
-                        dignissimos tempora eaque.</p>
+                    <p>{{$setting->description}}</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single-widget">
-                    <h3>Stay In Touch</h3>
+                    <h3>{{__('page.stay_in_touch')}}</h3>
                     <ul>
-                        <li>
+                        {{-- <li>
                             44 Canal Center Plaza #200, Alexandria, VA 22314, USA
+                        </li> --}}
+                        <li>
+                            <a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank">
+                                <span>WhatsApp:</span> {{$setting->whatsapp}}
+                            </a>
                         </li>
                         <li>
-                            <a href="tel:1900–123-456-78"><span>Hotline:</span> 1900 – 123 456 78</a>
-                        </li>
-                        <li>
-                            <a href="mailto:info@teznoshop.com"><span>Email:</span> info@teznoshop.com</a>
+                            <a href="mailto:{{$setting->email}}"><span>{{__('page.email')}}:</span> {{$setting->email}}</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single-widget">
-                    <h3>Products</h3>
+                    <h3>{{__('page.product')}}</h3>
+                    @php
+                        $products = \App\Models\Product::all();
+                    @endphp
                     <ul>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="flaticon-right-arrow"></i> Mask
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="flaticon-right-arrow"></i> Hand Sanitizer
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="flaticon-right-arrow"></i> Defend Healthtag
-                            </a>
-                        </li>
+                        @foreach ($products as $item)
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="flaticon-right-arrow"></i> {{$item->name}}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single-widget">
-                    <h3>About Tezno</h3>
+                    <h3>{{__('page.about_us')}}</h3>
                     <ul>
                         <li>
-                            <a href="javascript:;">
-                                <i class="flaticon-right-arrow"></i> About Us
+                            <a href="javascript:;"data-toggle="modal" data-target="#aboutUsModal">
+                                <i class="flaticon-right-arrow"></i> {{__('page.about_us')}}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
-                                <i class="flaticon-right-arrow"></i> Warranty
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="flaticon-right-arrow"></i> Online Catalogue
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="flaticon-right-arrow"></i> Business Accounts
+                            <a href="javascript:;" data-toggle="modal" data-target="#warrantyModal">
+                                <i class="flaticon-right-arrow"></i> {{__('page.warranty')}}
                             </a>
                         </li>
                     </ul>
@@ -106,7 +95,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="copy-right">
-                    <p>©2020 All Rights Reserved <a href="https://envytheme.com/" target="blank">Envy Theme</a></p>
+                    <p>©2020 {{__('page.all_rights_reserved')}}</p>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -139,3 +128,31 @@
     </div>
 </footer>
 <!-- End Footer Bottom Area -->
+
+<div class="modal" id="aboutUsModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{__('page.about_us')}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                {!! $setting->about_us !!}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="warrantyModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{__('page.about_us')}}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                {!! $setting->warranty !!}
+            </div>
+        </div>
+    </div>
+</div>

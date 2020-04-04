@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta name="description" content="Vali is amizable and modular.">
         <!-- Open Graph Meta-->
-        <meta property="og:type" content="website">
-        <meta property="og:site_name" content="{{config('app.name')}}">
-        <meta property="og:title" content="{{config('app.name')}} is the useful Accounting Web Application">
-        <meta property="og:url" content="http://wbb639.com">
         <meta property="og:image" content="{{asset('images/favicon.png')}}>
         <meta property="og:description" content="{{config('app.name')}} is the useful Accounting Web Application">
         <title>{{config('app.name')}}</title>
@@ -22,6 +17,7 @@
         <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.min.css')}}"> --}}
         <!-- Main CSS-->
         <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/main.css') }}">
+        @yield('style')
     </head>
     <body class="app sidebar-mini rtl">
         <div id="ajax-loading" class="text-center">

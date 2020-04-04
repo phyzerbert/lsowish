@@ -48,3 +48,6 @@ Route::get('sale/index', 'HomeController@sales')->name('admin.sale');
 Route::get('sale/delete/{id}', 'HomeController@delete_sale')->name('sale.delete');
 
 Route::post('/get_sale_products', 'HomeController@get_sale_products')->name('get_sale_products');
+
+Route::get('setting/index', 'SettingController@index')->name('setting.index');
+Route::post('setting/update', 'SettingController@update')->name('setting.update');

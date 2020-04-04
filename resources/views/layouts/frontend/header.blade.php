@@ -1,18 +1,21 @@
 <!-- Start Heder Area -->
+@php
+    $setting = \App\Models\Setting::first();
+@endphp
 <header class="header-area">
     <div class="top-header-area">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                     <ul class="header-content-left">
-                        <li>
+                        {{-- <li>
                             <a href="javascript:;">
                                 <i class="bx bx-user"></i> My Account
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
-                            <a href="tel:(453)-4567-324-008">
-                                <i class="bx bx-phone-call"></i> (453) 4567 324 008
+                            <a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank">
+                                <i class='bx bxl-whatsapp'></i> {{$setting->whatsapp}}
                             </a>
                         </li>
                     </ul>

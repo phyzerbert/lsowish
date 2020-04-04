@@ -3,7 +3,7 @@
 
     <head>
         <!-- Title -->
-        <title>Tezno | Muli-Niche eCommerce HTML Template</title>
+        <title>{{config('app.name')}} | Wellness eCommerce Website</title>
 
         <!-- Required meta tags -->
         <meta charset="utf-8">

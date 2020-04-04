@@ -46,5 +46,9 @@ return [
     'reasonable_pricing' => 'Reasonable Pricing',
     'talk_to_know_about_the_offer' => 'Talk to know about the offer',
     'claim_offer' => 'Claim Offer',
+    'about_us' => 'About Us',
+    'warranty' => 'Warranty',
+    'all_rights_reserved' => 'All Rights Reserved',
+    'stay_in_touch' => 'Stay In Touch',
 
 ];
