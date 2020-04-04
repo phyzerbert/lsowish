@@ -1,6 +1,9 @@
 @extends('layouts.frontend.master')
 
 @section('content')
+@php
+    $setting = \App\Models\Setting::first();
+@endphp
 <!-- Start Tezno Slider Area -->
     <section class="tezno-slider-area ptb-100">
         <div class="tezno-slider-wrap owl-theme owl-carousel" data-slider-id="1">
@@ -129,8 +132,8 @@
                         <i class="flaticon-trolley"></i>
                         <h3>{{__('page.24_7_client_support')}}</h3>
                         <p>{{__('page.talk_to_know_about_the_offer')}}</p>
-                        <a href="tel:+123 456 789">
-                            +123 456 789
+                        <a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank">
+                            {{$setting->whatsapp}}
                         </a>
                     </div>
                 </div>
