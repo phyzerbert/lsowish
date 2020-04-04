@@ -44,7 +44,7 @@
                     <div class="flag-wrap">
                         <ul>
                             <li class="flag-item-top">
-                                <a href="#" class="flag-bar">
+                                <a href="javascript:;" class="flag-bar">
                                     @switch($locale)
                                         @case('en')
                                             <img src="{{asset('images/flag/en.png')}}" alt="English"><span>English</span>
@@ -74,7 +74,7 @@
                     <div class="cart-wrap">
                         <a class="cart-icon" href="{{route('cart')}}">
                             <i class='bx bx-cart-alt'></i>
-                            <span id="cart_count">{{count($cart)}}</span>
+                            <span id="cart_count" class="cart_count">{{count($cart)}}</span>
                         </a>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                                 <div class="flag-wrap">
                                     <ul>
                                         <li class="flag-item-top">
-                                            <a href="#" class="flag-bar">
+                                            <a href="javascript:;" class="flag-bar">
                                                 @switch($locale)
                                                     @case('en')
                                                         <img src="{{asset('images/flag/en.png')}}" alt="English"><span>English</span>
@@ -121,7 +121,7 @@
                                 <div class="cart-wrap">
                                     <a class="cart-icon" href="{{route('cart')}}">
                                         <i class='bx bx-cart-alt'></i>
-                                        <span id="cart_count">{{count($cart)}}</span>
+                                        <span id="cart_count" class="cart_count">{{count($cart)}}</span>
                                     </a>
                                 </div>
                             </div>

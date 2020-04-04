@@ -173,7 +173,7 @@
                             </div>
                             <div class="product-content">
                                 <h3>{{$item->name}}</h3>
-                                <span class="price">RM{{$item->price}}</span>
+                                <span class="price">RM {{$item->price}}</span>
                             </div>
                             <div class="purchase-bar">
                                 <a href="javascript:;" class="default-btn btn-add-product" data-id="{{$item->id}}">

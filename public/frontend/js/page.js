@@ -8,7 +8,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 if (response.status == 200) {
-                    $("#cart_count").text(response.count);
+                    $(".cart_count").text(response.count);
                 }
             }
         });
