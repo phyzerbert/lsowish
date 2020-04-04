@@ -6873,7 +6873,7 @@ Cart Area Style
 
 .cart-area .cart-table table tbody tr td.product-quantity .input-counter {
     max-width: 130px;
-    min-width: 130px;
+    min-width: 110px;
     text-align: center;
     display: inline-block;
     position: relative;
