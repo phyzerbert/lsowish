@@ -1,6 +1,8 @@
 <!-- Start Heder Area -->
 @php
     $setting = \App\Models\Setting::first();
+    $locale = session()->get('locale');
+    $cart = session('cart') ?? [];
 @endphp
 <header class="header-area">
     <div class="top-header-area">
@@ -34,10 +36,48 @@
     <div class="tezno-nav-style">
         <div class="navbar-area">
             <!-- Menu For Mobile Device -->
-            <div class="mobile-nav">
-                <a href="index.html" class="logo">
+            <div class="mobile-nav" style="height: 72px; background:#017dee; box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4);">
+                <a href="{{route('index')}}" class="logo">
                     <img src="{{asset('frontend/img/demo-watch/logo.png')}}" alt="Logo">
                 </a>
+                <div class="others-option" style="z-index: 100; top: 9px; right: 20px;">
+                    <div class="flag-wrap">
+                        <ul>
+                            <li class="flag-item-top">
+                                <a href="#" class="flag-bar">
+                                    @switch($locale)
+                                        @case('en')
+                                            <img src="{{asset('images/flag/en.png')}}" alt="English"><span>English</span>
+                                            @break
+                                        @case('zh')
+                                            <img src="{{asset('images/flag/zh.png')}}" alt="简体中文"><span>简体中文</span>
+                                            @break
+                                        @default
+                                            <img src="{{asset('images/flag/en.png')}}" alt="English"><span>English</span>
+                                    @endswitch
+                                </a>
+                                <ul class="flag-item-bottom" style="max-width : 140px;">
+                                    <li class="flag-item">
+                                        <a href="{{route('lang', 'en')}}" class="flag-link">
+                                            <img src="{{asset('images/flag/en.png')}}" alt="English"> English
+                                        </a>
+                                    </li>
+                                    <li class="flag-item">
+                                        <a href="{{route('lang', 'zh')}}" class="flag-link">
+                                            <img src="{{asset('images/flag/zh.png')}}" alt="简体中文"> 简体中文
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cart-wrap">
+                        <a class="cart-icon" href="{{route('cart')}}">
+                            <i class='bx bx-cart-alt'></i>
+                            <span id="cart_count">{{count($cart)}}</span>
+                        </a>
+                    </div>
+                </div>
             </div>
             <!-- Menu For Desktop Device -->
             <div class="main-nav">
@@ -46,11 +86,8 @@
                         <a class="navbar-brand" href="{{route('index')}}">
                             <img src="{{asset('frontend/img/demo-watch/logo.png')}}" alt="Logo">
                         </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-
-                            <!-- Start Other Option -->
+                        {{-- <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent"> --}}
                             <div class="others-option ml-auto">
-                                @php $locale = session()->get('locale'); @endphp
                                 <div class="flag-wrap">
                                     <ul>
                                         <li class="flag-item-top">
@@ -81,10 +118,6 @@
                                         </li>
                                     </ul>
                                 </div>
-                                @php
-                                    $cart = session('cart') ?? [];
-
-                                @endphp
                                 <div class="cart-wrap">
                                     <a class="cart-icon" href="{{route('cart')}}">
                                         <i class='bx bx-cart-alt'></i>
@@ -92,7 +125,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        {{-- </div> --}}
                     </div>
                 </nav>
             </div>
