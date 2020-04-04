@@ -13,13 +13,13 @@
                         <div class="col-lg-6">
                             <div class="tezno-slider-text one">
                                 <span class="offer">45% Off This Month</span>
-                                <h1>Bulb Botz 24 Buy <span>It Now</span></h1>
+                                <h1>3 Ply <span>Mask</span></h1>
                                 <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
-                                    <span class="price">RM 654</span>
-                                    <a href="javascript:;" class="default-btn">
-                                        Add To Cart
+                                    <span class="price">RM 3.00</span>
+                                    <a href="javascript:;" class="default-btn btn-add-product" data-id="1">
+                                        {{__('page.add_to_cart')}}
                                         <i class="flaticon-right"></i>
                                     </a>
                                 </div>
@@ -39,13 +39,13 @@
                         <div class="col-lg-6">
                             <div class="tezno-slider-text two">
                                 <span class="offer">35% Off This Month</span>
-                                <h1>Ondonil B7 Time <span>Watch</span></h1>
+                                <h1>N95 3M <span>Mask</span></h1>
                                 <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
-                                    <span class="price">RM 554</span>
-                                    <a href="javascript:;" class="default-btn">
-                                        Add To Cart
+                                    <span class="price">RM 5.00</span>
+                                    <a href="javascript:;" class="default-btn btn-add-product" data-id="2">
+                                        {{__('page.add_to_cart')}}
                                         <i class="flaticon-right"></i>
                                     </a>
                                 </div>
@@ -65,13 +65,13 @@
                         <div class="col-lg-6">
                             <div class="tezno-slider-text three">
                                 <span class="offer">49% Off This Month</span>
-                                <h1>Hobeli 24/7 Time <span>Counter</span></h1>
+                                <h1>Hand Sanitizer <span>Counter</span></h1>
                                 <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
                                     lacus vel facilisis.</p>
                                 <div class="slider-btn">
-                                    <span class="price">RM 254</span>
-                                    <a href="javascript:;" class="default-btn">
-                                        Add To Cart
+                                    <span class="price">RM 5.00</span>
+                                    <a href="javascript:;" class="default-btn btn-add-product" data-id="3">
+                                        {{__('page.add_to_cart')}}
                                         <i class="flaticon-right"></i>
                                     </a>
                                 </div>
