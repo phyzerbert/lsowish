@@ -13,21 +13,17 @@ class CountriesTableSeeder extends Seeder
     public function run()
     {
         Country::Create([
-            'name' => 'Europe',
-            'code' => 'eu',
-            'flag' => 'images/flag/eu.jpg',
+            'name' => 'Malaysia',
+            'code' => 'my',
+            'phone_code' => '+60',
+            'flag' => 'images/flag/my.png',
         ]);
 
         Country::Create([
             'name' => 'Singapore',
             'code' => 'sg',
-            'flag' => 'images/flag/sg.jpg',
-        ]);
-
-        Country::Create([
-            'name' => 'United States',
-            'code' => 'us',
-            'flag' => 'images/flag/us.jpg',
+            'phone_code' => '+65',
+            'flag' => 'images/flag/sg.png',
         ]);
     }
 }
