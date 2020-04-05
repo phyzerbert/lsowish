@@ -18,6 +18,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '5.00',
             'quantity' => 5000,
             'image' => 'images/product/3ply_mask.jpg',
+            'image2' => 'images/product/2/3ply_mask.png',
         ]);
 
         Product::create([
@@ -25,6 +26,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '5.00',
             'quantity' => 5000,
             'image' => 'images/product/n95_3m_mask.jpg',
+            'image2' => 'images/product/2/n95_3m_mask.png',
         ]);
 
         Product::create([
@@ -32,6 +34,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '5.00',
             'quantity' => 5000,
             'image' => 'images/product/hand_sanitizer.jpg',
+            'image2' => 'images/product/2/hand_sanitizer.png',
         ]);
 
         Product::create([
@@ -39,6 +42,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '5.00',
             'quantity' => 5000,
             'image' => 'images/product/defend_health_tag.jpg',
+            'image2' => 'images/product/2/defend_health_tag.png',
         ]);
     }
 }
