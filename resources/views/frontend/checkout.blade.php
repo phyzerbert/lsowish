@@ -122,7 +122,7 @@
                                 </tr>
                             </tfoot>
                         </table>
-                        <p>{{__('page.invoice_description')}}</p>
+                        <p>{!! __('page.invoice_description') !!}</p>
                         <a href="javascript:;" class="default-btn btn-block mt-3" id="btn_place" >{{__('page.place_order')}}
                             <i class="flaticon-right"></i>
                         </a>
