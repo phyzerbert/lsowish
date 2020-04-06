@@ -33,7 +33,7 @@
 
                     <div class="row" id="bank_list">
                         <div class="col-12 payment-box">
-                            <div class="bank_logo mt-5">
+                            <div class="bank_logo mt-2 text-center">
                                 <img src="{{asset('images/bank/ebanking_my.png')}}" alt="">
                             </div>
                             @php
