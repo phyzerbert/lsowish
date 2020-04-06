@@ -44,9 +44,14 @@ class IndexController extends Controller
     }
 
     public function get_cart(Request $request) {
-        if (!$request->session()->exists('cart')) {
-            $request->session()->put('cart', []);
+
+        $products = Product::all();
+        $initial_cart = [];
+        foreach ($products as $item) {
+            $initial_cart[$item->id] = 0;
         }
+
+        $request->session()->put('cart', $initial_cart);
 
         $cart = $request->session()->get('cart');
 

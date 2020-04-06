@@ -25,6 +25,7 @@ var app = new Vue({
             this.mobilecheck();
             axios.get('get_cart').then(response => {
                 this.cart = response.data.data;
+                $("#cart_count").text(this.cart.length);
             })
         },
         increase(index) {

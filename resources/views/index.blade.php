@@ -19,7 +19,7 @@
                                         <p>{{$item->description}}</p>
                                         <div class="slider-btn">
                                             <span class="price">RM {{$item->price}}</span>
-                                            <a href="javascript:;" class="default-btn btn-add-product" data-id="{{$item->id}}">{{__('page.add_to_cart')}} <i class="flaticon-right"></i> </a>
+                                            <a href="{{route('cart')}}" class="default-btn btn-add-product" data-id="{{$item->id}}">{{__('page.add_to_cart')}} <i class="flaticon-right"></i> </a>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                                 <span class="price">RM {{$item->price}}</span>
                             </div>
                             <div class="purchase-bar">
-                                <a href="javascript:;" class="default-btn btn-add-product" data-id="{{$item->id}}">
+                                <a href="{{route('cart')}}" class="default-btn btn-add-product" data-id="{{$item->id}}">
                                     {{__('page.add_to_cart')}}
                                     <i class="flaticon-right"></i>
                                 </a>
