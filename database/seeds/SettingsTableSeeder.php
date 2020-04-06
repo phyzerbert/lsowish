@@ -17,6 +17,7 @@ class SettingsTableSeeder extends Seeder
             'email' => 'helpcoddelivery@gmail.com',
             'whatsapp' => '+60177163578',
             'phone_number' => '+60177163578',
+            'header_text' => 'Free 5 Day Shipping On Online Orders 100+',
         ]);
     }
 }

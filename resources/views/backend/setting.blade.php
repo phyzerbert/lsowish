@@ -31,8 +31,12 @@
                             <input type="text" name="whatsapp" class="form-control" value="{{$setting->whatsapp}}" />
                         </div>
                         <div class="form-group mt-3">
-                            <label for="">Description</label>
-                            <textarea name="description" class="form-control" rows="3">{{$setting->description}}</textarea>
+                            <label for="">Header Text</label>
+                            <input type="text" name="header_text" class="form-control" value="{{$setting->header_text}}" />
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="">Footer Text</label>
+                            <textarea name="footer_text" id="footer_text" class="form-control" rows="3">{{$setting->footer_text}}</textarea>
                         </div>
                         <div class="form-group mt-3">
                             <label for="">About Us</label>

@@ -23,9 +23,9 @@ class SettingController extends Controller
         $request->validate([
             'whatsapp' => 'required|string',
             'email' => 'required|email|string',
-            'about_us' => 'required|string',
-            'warranty' => 'required|string',
-            'description' => 'required|string',
+            // 'about_us' => 'required|string',
+            // 'warranty' => 'required|string',
+            // 'description' => 'required|string',
         ]);
 
         Setting::find(1)->update([
@@ -33,7 +33,8 @@ class SettingController extends Controller
             'email' => $request->get('email'),
             'about_us' => $request->get('about_us'),
             'warranty' => $request->get('warranty'),
-            'description' => $request->get('description'),
+            'header_text' => $request->get('header_text'),
+            'footer_text' => $request->get('footer_text'),
         ]);
 
         return back()->with('success', 'Updated Successfully.');

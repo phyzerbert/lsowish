@@ -21,7 +21,8 @@ class CreateSettingsTable extends Migration
             $table->string('address')->nullable();
             $table->text('about_us')->nullable();
             $table->text('warranty')->nullable();
-            $table->text('description')->nullable();
+            $table->string('header_text')->nullable();
+            $table->text('footer_text')->nullable();
             $table->timestamps();
         });
     }
