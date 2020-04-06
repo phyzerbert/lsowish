@@ -31,7 +31,7 @@ var app = new Vue({
             this.cart[index].quantity++;
         },
         decrease(index) {
-            if (this.cart[index].quantity === 1) return false;
+            if (this.cart[index].quantity === 0) return false;
             this.cart[index].quantity--;
         },
         removeProduct(index) {
