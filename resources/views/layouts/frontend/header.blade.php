@@ -25,7 +25,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header-content-right">
                         <p>
-                            <a href="#">Free 5 Day</a> Shipping On Online Orders 100+
+                            {{$setting->header_text}}
                         </p>
                     </div>
                 </div>

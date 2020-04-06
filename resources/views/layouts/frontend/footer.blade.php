@@ -8,7 +8,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="single-widget">
                     <img src="{{asset('frontend/img/demo-watch/footer-logo.png')}}" alt="Image">
-                    <p>{{$setting->description}}</p>
+                    <p>{{$setting->footer_text}}</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">

@@ -78,12 +78,10 @@
             <div class="col-lg-6 col-md-12">
                 <div class="order-details" id="order_details">
                     <div class="order-table table-responsive mt-5 mt-md-0">
-                        <div class="clearfix">
-                            <h3 class="title float-left">{{__('page.your_order')}}</h3>
-                            <h5 class="float-right text-primary">REF : {{$reference_no}}</h5>
-                        </div>
+                        <h3 class="title">{{__('page.your_order')}}</h3>
+                        <h5 class="text-primary">REF : {{$reference_no}}</h5>
                         <h6>{{date('d F Y h:i A')}}</h6>
-                        <h5>Pre Order Payment Fees : <span>RM 2.00</span></h5>
+                        <h5 class="text-primary">Pre Order Payment Fees : <span>RM 2.00</span></h5>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
