@@ -151,6 +151,7 @@
                             @csrf
                             <input type="hidden" class="bank" name="bank_id" id="bank_id" />
                             <input type="hidden" name="reference_no" value="{{$reference_no}}">
+                            <input type="hidden" name="amount" class="amount" />
                             <div class="form-group mt-3">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -172,7 +173,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class='bx bx-money'></i></span>
                                     </div>
-                                    <input type="text" class="form-control amount" name="amount" readonly placeholder="{{__('page.total_amount')}}" />
+                                    <input type="text" class="form-control total_amount" name="total_amount" readonly placeholder="{{__('page.total_amount')}}" value="Rm 2.00" />
                                 </div>
                             </div>
                             <div class="form-group mt-3">
@@ -207,7 +208,7 @@
                 let bank = $("input[name='bank']:checked").val();
                 let total_amount = $("#total_amount").text();
                 let image = $("input[name='bank']:checked").parents('p').find('img').attr('src');
-                console.log(image)
+
                 if(!bank) {
                     alert('Please select the payment option.');
                 } else if(bank == 'payoneer') {

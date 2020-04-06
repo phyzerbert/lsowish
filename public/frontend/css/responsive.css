@@ -832,7 +832,7 @@
         padding-bottom: 10px;
     }
     .checkout-area .order-details .order-table table tbody tr td {
-        white-space: nowrap;
+        white-space: normal;
         padding-left: 15px;
         padding-right: 15px;
     }
