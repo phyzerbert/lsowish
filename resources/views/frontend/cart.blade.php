@@ -84,7 +84,7 @@
                                     </div>
                                     <div class="col-12">
                                         <span class="unit-amount">RM @{{item.product.price}}</span>
-                                        <div class="input-counter ml-2">
+                                        <div class="input-counter ml-3">
                                             <span class="minus-btn" @click="decrease(index)">
                                                 <i class='bx bx-minus'></i>
                                             </span>
@@ -93,8 +93,8 @@
                                                 <i class='bx bx-plus'></i>
                                             </span>
                                         </div>
-                                        <span class="subtotal-amount ml-2">@{{sub_total(item)}}</span>
-                                        <a href="javascript:;" class="remove ml-3" @click="removeProduct(index)">
+                                        <span class="subtotal-amount ml-4">@{{sub_total(item)}}</span>
+                                        <a href="javascript:;" class="remove float-right" style="margin-top: 5px" @click="removeProduct(index)">
                                             <i class='bx bx-trash'></i>
                                         </a>
                                     </div>
