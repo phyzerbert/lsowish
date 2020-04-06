@@ -50,5 +50,7 @@ return [
     'warranty' => 'Warranty',
     'all_rights_reserved' => 'All Rights Reserved',
     'stay_in_touch' => 'Stay In Touch',
+    'confirm' => 'Confirm',
+    'invoice_description' => 'Rm 2.00 fees to confirm order and balance pay after you receiving your order',
 
 ];

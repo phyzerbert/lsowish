@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-right">
-                                    <button type="submit" class="btn btn-primary btn-lg" style="width: 150px">{{__('page.save')}}</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" style="width: 150px">{{__('page.confirm')}}</button>
                                 </div>
                             </div>
                         </form>
