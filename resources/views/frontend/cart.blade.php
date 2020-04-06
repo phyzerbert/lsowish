@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    @dump(is_Mobile())
+
                     <form>
                         <div class="cart-wraps">
                             @if (!is_Mobile())
@@ -112,23 +112,29 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-7 col-sm-7 col-md-7">
                                         <div class="continue-shopping-box">
-                                            <a href="{{route('index')}}" class="default-btn page-btn" v-if="!is_mobile">
-                                                {{__('page.continue_shopping')}}
-                                            </a>
-                                            <a href="javascript:;" class=" default-btn page-btn" @click="saveCart()" v-else>
-                                                {{__('page.proceed_to_checkout')}}
-                                            </a>
+                                            @if (!is_Mobile())
+                                                <a href="{{route('index')}}" class="default-btn page-btn">
+                                                    {{__('page.continue_shopping')}}
+                                                </a>
+                                            @else
+                                                <a href="javascript:;" class=" default-btn page-btn" @click="saveCart()">
+                                                    {{__('page.proceed_to_checkout')}}
+                                                </a>
+                                            @endif
                                         </div>
 
                                     </div>
 
                                     <div class="col-lg-5 col-sm-5 col-md-5 text-right">
-                                        <a href="javascript:;" class=" default-btn page-btn" @click="saveCart()" v-if="!is_mobile">
-                                            {{__('page.proceed_to_checkout')}}
-                                        </a>
-                                        <a href="{{route('index')}}" class="default-btn page-btn" v-else>
-                                            {{__('page.continue_shopping')}}
-                                        </a>
+                                        @if (!is_Mobile())
+                                            <a href="javascript:;" class=" default-btn page-btn" @click="saveCart()" v-if="!is_mobile">
+                                                {{__('page.proceed_to_checkout')}}
+                                            </a>
+                                        @else
+                                            <a href="{{route('index')}}" class="default-btn page-btn" v-else>
+                                                {{__('page.continue_shopping')}}
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
