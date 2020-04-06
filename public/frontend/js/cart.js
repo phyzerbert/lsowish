@@ -35,8 +35,15 @@ var app = new Vue({
             this.cart[index].quantity--;
         },
         removeProduct(index) {
-            this.cart.splice(index, 1);
-            $("#cart_count").text(this.cart.length);
+            let product_id = this.cart[index].product.id;
+            console.log(product_id)
+            let uri = '/cart/remove_item/' + product_id;
+            axios.get(uri).then(response => {
+                if (response.data.status == 200) {
+                    this.cart.splice(index, 1);
+                    $("#cart_count").text(this.cart.length);
+                }
+            });
         },
         sub_total(item) {
             return item.product.price * item.quantity;

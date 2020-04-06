@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(document).on('click, touchstart', '.btn-add-product', function() {
+    $(document).on('click touchstart', '.btn-add-product', function() {
         let id = $(this).data('id');
         $.ajax({
             url: '/add_to_cart',

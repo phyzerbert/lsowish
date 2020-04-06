@@ -31,6 +31,7 @@ Route::post('/add_to_cart', 'IndexController@add_to_cart')->name('add_to_cart');
 
 Route::get('/get_cart', 'IndexController@get_cart')->name('get_cart');
 Route::post('/save_cart', 'IndexController@save_cart')->name('save_cart');
+Route::get('/cart/remove_item/{id}', 'IndexController@remove_cart_item')->name('remove_cart_item');
 
 
 Route::get('/input_customer', 'IndexController@input_customer')->name('input_customer');

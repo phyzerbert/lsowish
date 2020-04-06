@@ -27,7 +27,7 @@ class IndexController extends Controller
         $product = Product::find($request->get('product_id'));
 
         if(!array_key_exists($product->id, $cart)) {
-            $cart[$product->id] = 0;
+            $cart[strval($product->id)] = 0;
         }
 
         $request->session()->put('cart', $cart);
@@ -49,6 +49,7 @@ class IndexController extends Controller
         }
 
         $cart = $request->session()->get('cart');
+
         $cart_data = array();
         foreach ($cart as $key => $value) {
             $item = [
@@ -75,6 +76,19 @@ class IndexController extends Controller
             'data' => $cart,
         ];
         return response()->json($data);
+    }
+
+    public function remove_cart_item(Request $request, $id) {
+        $cart = $request->session()->get('cart');
+        $cart_data = array();
+        foreach ($cart as $key => $value) {
+            if($key != $id) {
+                $cart_data[$key] = $value;
+            }
+        }
+        $request->session()->put('cart', $cart_data);
+
+        return response()->json(['status' => 200]);
     }
 
     public function input_customer(Request $request) {
