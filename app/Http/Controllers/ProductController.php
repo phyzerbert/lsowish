@@ -28,6 +28,7 @@ class ProductController extends Controller
         $item->name = $request->get('name');
         $item->price = $request->get('price');
         $item->quantity = $request->get('quantity');
+        $item->description = $request->get('description');
 
         if($request->has("image")){
             $picture = $request->file('image');
@@ -37,6 +38,16 @@ class ProductController extends Controller
             $img = Image::make($imageName)->resize(600, 600);
             $img->save($imageName);
             $item->image = $imageName;
+        }
+
+        if($request->has("image2")){
+            $picture = $request->file('image2');
+            $imageName = "product_".time().'.'.$picture->getClientOriginalExtension();
+            $picture->move(public_path("images/uploaded/product_images"), $imageName);
+            $imageName = "images/uploaded/product_images/".$imageName;
+            $img = Image::make($imageName)->resize(460, 600);
+            $img->save($imageName);
+            $item->image2 = $imageName;
         }
         $item->save();
         return back()->with('success', 'Created Successfully');
@@ -47,6 +58,7 @@ class ProductController extends Controller
         $item->name = $request->get('name');
         $item->price = $request->get('price');
         $item->quantity = $request->get('quantity');
+        $item->description = $request->get('description');
 
         if($request->has("image")){
             $picture = $request->file('image');
@@ -57,6 +69,17 @@ class ProductController extends Controller
             $img->save($imageName);
             $item->image = $imageName;
         }
+
+        if($request->has("image2")){
+            $picture = $request->file('image2');
+            $imageName = "product_".time().'.'.$picture->getClientOriginalExtension();
+            $picture->move(public_path("images/uploaded/product_images"), $imageName);
+            $imageName = "images/uploaded/product_images/".$imageName;
+            $img = Image::make($imageName)->resize(460, 600);
+            $img->save($imageName);
+            $item->image2 = $imageName;
+        }
+
         $item->save();
         return back()->with('success', 'Updated Successfully');
     }

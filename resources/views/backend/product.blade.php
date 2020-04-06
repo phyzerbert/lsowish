@@ -88,7 +88,7 @@
                     <div class="form-group">
                         <label for="">Banner Image (This image should be PNG file.)</label>
                         <div class="custom-file">
-                            <input type="file" name="image" class="custom-file-input" id="customFile" accept=".png"
+                            <input type="file" name="image2" class="custom-file-input" id="customFile" accept=".png"
                                 required />
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
@@ -140,7 +140,7 @@
                     <div class="form-group">
                         <label for="">Banner Image (This image should be PNG file.)</label>
                         <div class="custom-file">
-                            <input type="file" name="image" class="custom-file-input" id="customFile" accept=".png" />
+                            <input type="file" name="image2" class="custom-file-input" id="customFile" accept=".png" />
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
                     </div>
