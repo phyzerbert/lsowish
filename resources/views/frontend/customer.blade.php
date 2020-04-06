@@ -61,7 +61,7 @@
                                         <label>{{__('page.phone_number')}} <span class="required">*</span></label>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="phone_code">+61</span>
+                                                <span class="input-group-text" id="phone_code">+60</span>
                                             </div>
                                             <input type="text" class="form-control" name="phone_number">
                                         </div>
