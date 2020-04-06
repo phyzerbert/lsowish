@@ -52,7 +52,7 @@
                                     <td class="address">{{$item->customer->address ?? ''}}</td>
                                     <td class="postcode">{{$item->customer->postcode ?? ''}}</td>
                                     <td class="bank_id" data-id="{{$item->payment->bank_id}}">
-                                        @if($item->payment->type = 2)
+                                        @if($item->payment->type == 2)
                                             Payoneer
                                         @else
                                             {{$item->payment->bank->name ?? ''}}
