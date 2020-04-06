@@ -46,7 +46,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            {{-- <div class="col-lg-3 col-md-6">
                 <div class="single-widget">
                     <h3>{{__('page.about_us')}}</h3>
                     <ul>
@@ -62,7 +62,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </footer>

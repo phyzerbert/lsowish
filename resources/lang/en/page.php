@@ -51,6 +51,6 @@ return [
     'all_rights_reserved' => 'All Rights Reserved',
     'stay_in_touch' => 'Stay In Touch',
     'confirm' => 'Confirm',
-    'invoice_description' => "<strong class='text-primary'>Rm 2.00</strong> fees to confirm order and balance pay after you receiving your order",
+    'invoice_description' => "<strong class='text-primary'>Rm 2.00</strong> will be charged first to confirm your order and pay your remaining balance once you have received your order",
 
 ];

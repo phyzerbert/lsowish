@@ -48,7 +48,7 @@
                                     </td>
                                     <td class="country" data-id="{{$item->customer->country_id ?? ''}}">{{$item->customer->country->name}}</td>
                                     <td class="name_as_ic">{{$item->customer->name_as_ic ?? ''}}</td>
-                                    <td class="phone_number">{{$item->customer->phone_number ?? ''}}</td>
+                                    <td class="phone_number">{{$item->customer->country->phone_code ?? ''}} {{$item->customer->phone_number ?? ''}}</td>
                                     <td class="address">{{$item->customer->address ?? ''}}</td>
                                     <td class="postcode">{{$item->customer->postcode ?? ''}}</td>
                                     <td class="bank_id" data-id="{{$item->payment->bank_id}}">

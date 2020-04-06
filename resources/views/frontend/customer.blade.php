@@ -34,9 +34,9 @@
                                             $countries = \App\Models\Country::all();
                                         @endphp
                                         <div class="select-box">
-                                            <select class="form-control" name="country">
+                                            <select class="form-control" name="country" id="country_select">
                                                 @foreach ($countries as $item)
-                                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                                    <option value="{{$item->id}}" data-value="{{$item->phone_code}}">{{$item->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-md-6">
+                                <div class="col-lg-12 col-md-6">
                                     <div class="form-group">
                                         <label>{{__('page.name_as_ic')}} <span class="required">*</span></label>
                                         <input type="text" class="form-control" name="name_as_ic" required />
@@ -56,10 +56,15 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-md-6">
+                                <div class="col-lg-12 col-md-6">
                                     <div class="form-group">
                                         <label>{{__('page.phone_number')}} <span class="required">*</span></label>
-                                        <input type="text" class="form-control" name="phone_number">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="phone_code">+61</span>
+                                            </div>
+                                            <input type="text" class="form-control" name="phone_number">
+                                        </div>
                                         @error('phone_number')
                                         <span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>
                                         @enderror
@@ -96,5 +101,16 @@
         </div>
     </section>
     <!-- End Checkout Area -->
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function(){
+            $("#country_select").change(function(){
+                let phone_code = $(this). children("option:selected").data('value');
+                $("#phone_code").text(phone_code);
+            });
+        });
+    </script>
 @endsection
 

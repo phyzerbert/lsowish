@@ -51,6 +51,6 @@ return [
     'all_rights_reserved' => '版权所有',
     'stay_in_touch' => '保持联系',
     'confirm' => '确认',
-    'invoice_description' => '只需预付Rm2.00来确定订单，余额货到才付款',
+    'invoice_description' => "只需预付<span class='text-primary'>Rm 2.00</span>来确定订单，余额货到再付款",
 
 ];
