@@ -6,7 +6,7 @@
     $setting = \App\Models\Setting::first();
 @endphp
 <!-- Start Page Title Area -->
-<div class="page-title-area">
+{{-- <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
             <h2>{{__('page.checkout')}}</h2>
@@ -20,7 +20,7 @@
             </ul>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- End Page Title Area -->
 
 <!-- Start Checkout Area -->
