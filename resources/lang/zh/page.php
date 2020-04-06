@@ -52,5 +52,6 @@ return [
     'stay_in_touch' => '保持联系',
     'confirm' => '确认',
     'invoice_description' => "只需预付<span class='text-primary'>Rm 2.00</span>来确定订单，余额货到再付款",
+    'product_list' => '产品列表'
 
 ];

@@ -52,5 +52,6 @@ return [
     'stay_in_touch' => 'Stay In Touch',
     'confirm' => 'Confirm',
     'invoice_description' => "<strong class='text-primary'>Rm 2.00</strong> will be charged first to confirm your order and pay your remaining balance once you have received your order",
+    'product_list' => 'Product List',
 
 ];

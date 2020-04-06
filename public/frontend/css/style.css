@@ -9341,5 +9341,78 @@ textarea.textarea-hight {
     z-index: 1100;
 }
 
+.cart-mobile .input-counter {
+    max-width: 130px;
+    min-width: 110px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+.cart-mobile .input-counter span {
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: #333333;
+    width: 40px;
+    height: 100%;
+    line-height: 35px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.cart-mobile .input-counter span:hover {
+    color: #0160e7;
+}
+
+.cart-mobile .input-counter span.minus-btn {
+    left: 0;
+}
+
+.cart-mobile .input-counter span.plus-btn {
+    right: 0;
+}
+
+.cart-mobile .input-counter input {
+    height: 35px;
+    color: #333333;
+    outline: 0;
+    display: block;
+    border: none;
+    background-color: #f8f8f8;
+    text-align: center;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.cart-mobile .input-counter input::-webkit-input-placeholder {
+    color: #333333;
+}
+
+.cart-mobile .input-counter input:-ms-input-placeholder {
+    color: #333333;
+}
+
+.cart-mobile .input-counter input::-ms-input-placeholder {
+    color: #333333;
+}
+
+.cart-mobile .input-counter input::placeholder {
+    color: #333333;
+}
+
+.cart-area .cart-buttons {
+    margin-top: 30px;
+}
+
+.cart-mobile .product-name,
+.cart-mobile .unit-amount,
+.cart-mobile .subtotal-amount {
+    font-weight: 600;
+    font-size: 16px;
+}
+
 
 /*# sourceMappingURL=style.css.map */
