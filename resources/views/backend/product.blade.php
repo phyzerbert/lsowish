@@ -39,7 +39,7 @@
                                 <td class="quantity" data-value="{{$item->quantity}}">{{$item->quantity}}</td>
                                 <td>{{$item->sales()->sum('quantity')}}</td>
                                 <td class="action py-2">
-                                    <button type="button" class="btn btn-primary btn-sm btn-edit" data-id="{{$item->id}}"><i class="fa fa-edit"></i> Edit</button>
+                                    <button type="button" class="btn btn-primary btn-sm btn-edit" data-id="{{$item->id}}" data-value="{{$item->description}}"><i class="fa fa-edit"></i> Edit</button>
                                     <a href="{{route('product.delete', $item->id)}}" class="btn btn-danger btn-sm" onclick="return window.confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</a>
                                 </td>
                             </tr>
@@ -85,6 +85,18 @@
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="">Banner Image (This image should be PNG file.)</label>
+                        <div class="custom-file">
+                            <input type="file" name="image" class="custom-file-input" id="customFile" accept=".png"
+                                required />
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="description" class="form-control description" rows="3" required required></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary mr-2">Save</button>
@@ -125,6 +137,17 @@
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="">Banner Image (This image should be PNG file.)</label>
+                        <div class="custom-file">
+                            <input type="file" name="image" class="custom-file-input" id="customFile" accept=".png" />
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="description" class="form-control description" rows="3" required required></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary mr-2">Save</button>
@@ -146,6 +169,7 @@
 
             $(".btn-edit").click(function () {
                 let id = $(this).data('id');
+                let description = $(this).data('value');
                 let name = $(this).parents('tr').find('.name').data('value');
                 let price = $(this).parents('tr').find('.price').data('value');
                 let quantity = $(this).parents('tr').find('.quantity').data('value');
@@ -154,6 +178,7 @@
                 $("#edit_form .name").val(name);
                 $("#edit_form .price").val(price);
                 $("#edit_form .quantity").val(quantity);
+                $("#edit_form .description").val(description);
 
                 $("#editModal").modal();
             });
