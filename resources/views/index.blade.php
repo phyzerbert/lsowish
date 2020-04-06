@@ -3,109 +3,51 @@
 @section('content')
 @php
     $setting = \App\Models\Setting::first();
+    $products = \App\Models\Product::all();
+    $number_array = ['one', 'two', 'three', 'four'];
 @endphp
 <!-- Start Tezno Slider Area -->
     <section class="tezno-slider-area ptb-100">
         <div class="tezno-slider-wrap owl-theme owl-carousel" data-slider-id="1">
-            <div class="tezno-slider-item">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="tezno-slider-text one">
-                                <span class="offer">45% Off This Month</span>
-                                <h1>3 Ply <span>Mask</span></h1>
-                                <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
-                                    lacus vel facilisis.</p>
-                                <div class="slider-btn">
-                                    <span class="price">RM 3.00</span>
-                                    <a href="javascript:;" class="default-btn btn-add-product" data-id="1">
-                                        {{__('page.add_to_cart')}}
-                                        <i class="flaticon-right"></i>
-                                    </a>
+            @foreach ($products as $item)
+                    <div class="tezno-slider-item">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="tezno-slider-text {{$number_array[$loop->index] ?? ''}}">
+                                        <h1>{{$item->name}}</h1>
+                                        <p>{{$item->description}}</p>
+                                        <div class="slider-btn">
+                                            <span class="price">RM {{$item->price}}</span>
+                                            <a href="javascript:;" class="default-btn btn-add-product" data-id="{{$item->id}}">{{__('page.add_to_cart')}} <i class="flaticon-right"></i> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="slider-img">
+                                        <img src="{{asset($item->image2)}}" alt="Image">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="slider-img">
-                                <img src="{{asset('frontend/img/demo-watch/slider/1.png')}}" alt="Image">
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="tezno-slider-item">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="tezno-slider-text two">
-                                <span class="offer">35% Off This Month</span>
-                                <h1>N95 3M <span>Mask</span></h1>
-                                <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
-                                    lacus vel facilisis.</p>
-                                <div class="slider-btn">
-                                    <span class="price">RM 5.00</span>
-                                    <a href="javascript:;" class="default-btn btn-add-product" data-id="2">
-                                        {{__('page.add_to_cart')}}
-                                        <i class="flaticon-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="slider-img">
-                                <img src="{{asset('frontend/img/demo-watch/slider/2.png')}}" alt="Image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tezno-slider-item">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="tezno-slider-text three">
-                                <span class="offer">49% Off This Month</span>
-                                <h1>Hand Sanitizer <span>Counter</span></h1>
-                                <p>Ultra-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan
-                                    lacus vel facilisis.</p>
-                                <div class="slider-btn">
-                                    <span class="price">RM 5.00</span>
-                                    <a href="javascript:;" class="default-btn btn-add-product" data-id="3">
-                                        {{__('page.add_to_cart')}}
-                                        <i class="flaticon-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="slider-img">
-                                <img src="{{asset('frontend/img/demo-watch/slider/3.png')}}" alt="Image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
 
         <!-- Start Carousel Thumbs -->
         <div class="owl-thumbs tezno-slider-thumb" data-slider-id="1">
-            <div class="owl-thumb-item">
-                <span>01</span>
-            </div>
-
-            <div class="owl-thumb-item">
-                <span>02</span>
-            </div>
-
-            <div class="owl-thumb-item">
-                <span>03</span>
-            </div>
+            @foreach ($products as $item)
+                <div class="owl-thumb-item">
+                    <span>{{$loop->iteration}}</span>
+                </div>
+            @endforeach
         </div>
         <!-- End Carousel Thumbs -->
         <div class="slider-bottom-shape">
             <img src="{{asset('frontend/img/demo-watch/slider/slider-bottom-shape.png')}}" alt="Image">
         </div>
         <div class="lines">
+            <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -156,9 +98,6 @@
             <div class="section-title watch-section-title">
                 <h2>{{__('page.our_products')}}</h2>
             </div>
-            @php
-                $products = \App\Models\Product::all();
-            @endphp
             <div class="row">
                 @foreach ($products as $item)
                     <div class="col-lg-3 col-sm-6">
