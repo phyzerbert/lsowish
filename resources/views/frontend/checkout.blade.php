@@ -29,9 +29,9 @@
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="billing-details">
-                    <h3 class="title">{{__('page.direct_bank_transfer')}}</h3>
+                    <h3 class="title" style="cursor: pointer;" data-toggle="collapse" data-target="#bank_list">{{__('page.direct_bank_transfer')}}</h3>
 
-                    <div class="row">
+                    <div class="row collapse" id="bank_list">
                         <div class="col-12 payment-box">
                             @php
                                 $banks = \App\Models\Bank::all();
@@ -50,8 +50,11 @@
                         </div>
                     </div>
 
-                    <h3 class="title mt-4">Payoneer</h3>
-                    <div class="row">
+                    <hr />
+
+                    <h3 class="title mt-4" style="cursor: pointer;" data-toggle="collapse" data-target="#payoneer_list">Payoneer Transfer</h3>
+
+                    <div class="row collapse" id="payoneer_list">
                         <div class="col-12 payment-box">
                             <div class="payment-method">
                                 <p class="mt-4">
@@ -67,7 +70,7 @@
                 </div>
             </div>
             @php
-                $reference_no ="LSO-00".time();
+                $reference_no ="#".substr(time(),4);
             @endphp
             <div class="col-lg-6 col-md-12">
                 <div class="order-details">
