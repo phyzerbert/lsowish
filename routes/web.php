@@ -17,7 +17,11 @@ Route::get('lang/{locale}', 'IndexController@lang')->name('lang');
 
 Route::get('/', 'IndexController@index')->name('index');
 
-Auth::routes();
+// Auth::routes();
+
+Route::get('login335', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
