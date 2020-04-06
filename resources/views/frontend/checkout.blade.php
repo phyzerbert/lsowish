@@ -1,6 +1,10 @@
 @extends('layouts.frontend.master')
 
 @section('content')
+
+@php
+    $setting = \App\Models\Setting::first();
+@endphp
 <!-- Start Page Title Area -->
 <div class="page-title-area">
     <div class="container">
@@ -184,6 +188,8 @@
 @section('script')
     <script>
         $(document).ready(function () {
+            var whatsapp = "{{$setting->whatsapp}}";
+            var email = "{{$setting->email}}";
             $("#btn_place").click(function(){
                 let bank = $("input[name='bank']:checked").val();
                 let total_amount = $("#total_amount").text();
@@ -221,7 +227,7 @@
                             if(response.status == 200) {
                                 setTimeout(function() {
                                     $("#ajax-loading").fadeOut();
-                                    Swal.fire(`<div class="text-left pt-3" style="font-size: 17px;"><p>Site will be slow due to heavy traffice. Please Try again later.</p><p>Contact or WhatsApp <a href="https://api.whatsapp.com/send?phone=60177163578" target="_blank">+60177163578</a></p><p>Email us at <a href="mailto:helpcoddelivery@gmail.com">helpcoddelivery@gmail.com</a></p></div>`);
+                                    Swal.fire(`<div class="text-left pt-3" style="font-size: 17px;"><p>Site will be slow due to heavy traffice. Please Try again later.</p><p>Contact or WhatsApp <a href="https://api.whatsapp.com/send?phone=${whatsapp}" target="_blank">${whatsapp}</a></p><p>Email us at <a href="mailto:${whatsapp}">${whatsapp}</a></p></div>`);
                                 }, 15000);
                             } else if (response.status == 400) {
                                 if(response.result == 'cart_error') {
