@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Start Page Title Area -->
-    <div class="page-title-area">
+    {{-- <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
                 <h2>{{__('page.billing_details')}}</h2>
@@ -14,11 +14,11 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- End Page Title Area -->
 
     <!-- Start Checkout Area -->
-    <section class="checkout-area ptb-100">
+    <section class="checkout-area ptb-100 pt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-12">

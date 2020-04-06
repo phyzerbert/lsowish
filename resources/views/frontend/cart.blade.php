@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Start Page Title Area -->
-    <div class="page-title-area">
+    {{-- <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
                 <h2>Cart</h2>
@@ -14,14 +14,13 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- End Page Title Area -->
     <!-- Start Cart Area -->
-    <section class="cart-area ptb-100" id="page">
+    <section class="cart-area ptb-100 pt-5" id="page">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-
                     <form>
                         <div class="cart-wraps">
                             @if (!is_Mobile())
