@@ -27,7 +27,7 @@ class IndexController extends Controller
         $product = Product::find($request->get('product_id'));
 
         if(!array_key_exists($product->id, $cart)) {
-            $cart[$product->id] = 1;
+            $cart[$product->id] = 0;
         }
 
         $request->session()->put('cart', $cart);
