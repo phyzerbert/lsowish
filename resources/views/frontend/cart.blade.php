@@ -127,11 +127,11 @@
 
                                     <div class="col-lg-5 col-sm-5 col-md-5 text-right">
                                         @if (!is_Mobile())
-                                            <a href="javascript:;" class=" default-btn page-btn" @click="saveCart()" v-if="!is_mobile">
+                                            <a href="javascript:;" class=" default-btn page-btn" @click="saveCart()">
                                                 {{__('page.proceed_to_checkout')}}
                                             </a>
                                         @else
-                                            <a href="{{route('index')}}" class="default-btn page-btn" v-else>
+                                            <a href="{{route('index')}}" class="default-btn page-btn">
                                                 {{__('page.continue_shopping')}}
                                             </a>
                                         @endif
