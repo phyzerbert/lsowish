@@ -11,4 +11,8 @@ class Payment extends Model
     public function sale() {
         return $this->belongsTo(Sale::class);
     }
+
+    public function bank() {
+        return $this->belongsTo(Bank::class);
+    }
 }
