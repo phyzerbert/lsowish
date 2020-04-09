@@ -33,7 +33,7 @@
                 <div class="single-widget">
                     <h3>{{__('page.product')}}</h3>
                     @php
-                        $products = \App\Models\Product::all();
+                        $products = \App\Models\Product::all()->take(4);
                     @endphp
                     <ul>
                         @foreach ($products as $item)
