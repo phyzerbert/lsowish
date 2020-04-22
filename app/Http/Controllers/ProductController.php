@@ -26,8 +26,8 @@ class ProductController extends Controller
     public function create(Request $request) {
         $item = new Product();
         $item->name = $request->get('name');
-        $item->price = $request->get('price');
-        $item->quantity = $request->get('quantity');
+        // $item->price = $request->get('price');
+        // $item->quantity = $request->get('quantity');
         $item->description = $request->get('description');
 
         if($request->has("image")){
@@ -56,8 +56,8 @@ class ProductController extends Controller
     public function edit(Request $request) {
         $item = Product::find($request->get('id'));
         $item->name = $request->get('name');
-        $item->price = $request->get('price');
-        $item->quantity = $request->get('quantity');
+        // $item->price = $request->get('price');
+        // $item->quantity = $request->get('quantity');
         $item->description = $request->get('description');
 
         if($request->has("image")){

@@ -24,8 +24,8 @@
                             <tr>
                                 <th style="width:50px">No</th>
                                 <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
+                                {{-- <th>Price</th>
+                                <th>Quantity</th> --}}
                                 <th>Sales</th>
                                 <th>Action</th>
                             </tr>
@@ -35,8 +35,8 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td class="name" data-value="{{$item->name}}"><span>{{$item->name}}</span></td>
-                                <td class="price" data-value="{{$item->price}}"><span>${{$item->price}}</span></td>
-                                <td class="quantity" data-value="{{$item->quantity}}">{{$item->quantity}}</td>
+                                {{-- <td class="price" data-value="{{$item->price}}"><span>${{$item->price}}</span></td>
+                                <td class="quantity" data-value="{{$item->quantity}}">{{$item->quantity}}</td> --}}
                                 <td>{{$item->sales()->sum('quantity')}}</td>
                                 <td class="action py-2">
                                     <button type="button" class="btn btn-primary btn-sm btn-edit" data-id="{{$item->id}}" data-value="{{$item->description}}"><i class="fa fa-edit"></i> Edit</button>
@@ -70,14 +70,14 @@
                         <label for="">Name</label>
                         <input type="text" name="name" class="form-control name" required />
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="">Price</label>
                         <input type="number" name="price" step="0.01" class="form-control price" required />
                     </div>
                     <div class="form-group">
                         <label for="">Quantity</label>
                         <input type="number" name="quantity" min="0" class="form-control quantity" required />
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label for="">Image</label>
                         <div class="custom-file">
@@ -122,14 +122,14 @@
                         <label for="">Name</label>
                         <input type="text" name="name" class="form-control name" required />
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="">Price</label>
                         <input type="number" name="price" step="0.01" class="form-control price" required />
                     </div>
                     <div class="form-group">
                         <label for="">Quantity</label>
                         <input type="number" name="quantity" min="0" class="form-control quantity" required />
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label for="">Image</label>
                         <div class="custom-file">
@@ -171,13 +171,13 @@
                 let id = $(this).data('id');
                 let description = $(this).data('value');
                 let name = $(this).parents('tr').find('.name').data('value');
-                let price = $(this).parents('tr').find('.price').data('value');
-                let quantity = $(this).parents('tr').find('.quantity').data('value');
+                // let price = $(this).parents('tr').find('.price').data('value');
+                // let quantity = $(this).parents('tr').find('.quantity').data('value');
 
                 $("#edit_form .id").val(id);
                 $("#edit_form .name").val(name);
-                $("#edit_form .price").val(price);
-                $("#edit_form .quantity").val(quantity);
+                // $("#edit_form .price").val(price);
+                // $("#edit_form .quantity").val(quantity);
                 $("#edit_form .description").val(description);
 
                 $("#editModal").modal();

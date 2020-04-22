@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Sale;
 use App\Models\Product;
 use App\Models\ProductSale;
+use App\Models\Bank;
+use App\Models\Payment;
+use App\Models\Customer;
 
 class HomeController extends Controller
 {
@@ -28,9 +31,22 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         config(['site.page' => 'sale']);
+        $banks = Bank::all();
+
+        $keyword = $bank_id = $name_as_ic = '';
         $mod = new Sale();
+        if($request->get('bank_id') != '') {
+            $bank_id = $request->get('bank_id');
+            $payment_array = Payment::where('bank_id', $bank_id)->pluck('id');
+            $mod = $mod->whereIn('payment_id', $payment_array);
+        }
+        if($request->get('name_as_ic') != '') {
+            $name_as_ic = $request->get('name_as_ic');
+            $customer_array = Customer::where('name_as_ic', 'like', "%$name_as_ic%")->pluck('id');
+            $mod = $mod->whereIn('customer_id', $customer_array);
+        }
         $data = $mod->orderBy('created_at')->paginate(15);
-        return view('backend.index', compact('data'));
+        return view('backend.index', compact('data', 'keyword', 'banks', 'bank_id', 'name_as_ic'));
     }
 
     public function delete_sale($id) {

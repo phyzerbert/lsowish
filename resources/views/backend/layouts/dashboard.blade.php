@@ -51,7 +51,6 @@
         {{-- <script src="{{ asset('plugins/jqueryui-timepicker/dist/jquery-ui-timepicker-addon.min.js') }}"></script>
         <script src="{{asset('plugins/daterangepicker/moment.min.js')}}"></script>
         <script src="{{asset('plugins/daterangepicker/jquery.daterangepicker.min.js')}}"></script> --}}
-        <script src="{{ asset('backend/js/header-transaction.js') }}"></script>
         <script>
             $.ajaxSetup({
                 headers: {
@@ -60,7 +59,7 @@
             });
         </script>
 
-            @yield('script')
+        @yield('script')
 
         <!-- Google analytics script-->
         <script type="text/javascript">

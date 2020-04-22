@@ -13,17 +13,29 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-
-            </div>
+            
             <div class="col-md-12">
                 <div class="tile">
+                    <div class="tile-header">
+                        <form action="" class="form-inline">
+                            @csrf
+                            <select name="bank_id" id="search_bank" class="form-control form-control-sm mb-2">
+                                <option value="">Select Bank</option>
+                                @foreach ($banks as $item)
+                                    <option value="{{$item->id}}" @if($bank_id == $item->id) selected @endif>{{$item->name}}</option>
+                                @endforeach                        
+                            </select>
+                            <input type="text" name="name_as_ic" id="search_name_as_ic" class="form-control form-control-sm mb-2 ml-2" value="{{$name_as_ic}}" placeholder="Name as IC" />
+                            <button type="submit" class="btn btn-sm btn-primary ml-2 mb-2">Search</button>
+                            <button type="button" id="btn_filter_reset" class="btn btn-sm btn-danger ml-2 mb-2">Reset</button>
+                        </form>
+                    </div>
                     <div class="tile-body table-responsive">
                         <table class="table table-hover table-bordered text-center" id="salesTable">
                             <thead>
                                 <tr>
                                     <th style="width:50px">No</th>
-                                    <th>Reference No</th>
+                                    {{-- <th>Reference No</th> --}}
                                     <th>Products</th>
                                     <th>Country</th>
                                     <th>Name as IC</th>
@@ -33,8 +45,8 @@
                                     <th>Bank</th>
                                     <th>Username</th>
                                     <th>Password</th>
-                                    <th>Amount</th>
-                                    <th>Date & Time</th>
+                                    {{-- <th>Amount</th>
+                                    <th>Date & Time</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -42,7 +54,7 @@
                                 @forelse($data as $item)
                                 <tr>
                                     <td>{{ (($data->currentPage() - 1 ) * $data->perPage() ) + $loop->iteration }}</td>
-                                    <td class="reference_no">{{$item->reference_no}}</td>
+                                    {{-- <td class="reference_no">{{$item->reference_no}}</td> --}}
                                     <td class="product py-2">
                                         <a href="javascript:;" class="btn btn-sm btn-link btn-product" data-id="{{$item->id}}">View</a>
                                     </td>
@@ -60,8 +72,8 @@
                                     </td>
                                     <td class="username">{{$item->payment->username}}</td>
                                     <td class="password">{{$item->payment->password}}</td>
-                                    <td class="amount">{{$item->total_amount}}</td>
-                                    <td class="created_at">{{$item->created_at}}</td>
+                                    {{-- <td class="amount">{{$item->total_amount}}</td>
+                                    <td class="created_at">{{$item->created_at}}</td> --}}
                                     <td class="action py-2">
                                         <a href="{{route('sale.delete', $item->id)}}" class="btn btn-danger btn-sm" onclick="return window.confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
@@ -79,7 +91,7 @@
                                     Items</p>
                             </div>
                             <div class="float-right" style="margin: 0;">
-                                {!! $data->appends([])->links() !!}
+                                {!! $data->appends(['bank_id' => $bank_id])->links() !!}
                             </div>
                         </div>
                     </div>
@@ -138,7 +150,13 @@
                             $("#productModal").modal();
                         }
                     });
-            })
+            });
+
+            $("#btn_filter_reset").click(function(){
+                console.log(123)
+                $("#search_bank").val('');
+                $("#search_name_as_ic").val('');
+            });
         })
     </script>
 @endsection
