@@ -56,3 +56,5 @@ Route::post('/get_sale_products', 'HomeController@get_sale_products')->name('get
 
 Route::get('setting/index', 'SettingController@index')->name('setting.index');
 Route::post('setting/update', 'SettingController@update')->name('setting.update');
+
+Route::get('sales/export', 'HomeController@export')->name('sales.export');

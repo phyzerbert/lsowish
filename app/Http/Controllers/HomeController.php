@@ -11,6 +11,9 @@ use App\Models\Bank;
 use App\Models\Payment;
 use App\Models\Customer;
 
+use App\Exports\SalesExport;
+use Excel;
+
 class HomeController extends Controller
 {
     /**
@@ -64,5 +67,9 @@ class HomeController extends Controller
             'result' => ProductSale::with('product')->where('sale_id', $request->get('sale_id'))->get(),
         ];
         return response()->json($data);
+    }
+
+    public function export(Request $request) {
+        return Excel::download(new SalesExport, 'sales.xlsx');
     }
 }
