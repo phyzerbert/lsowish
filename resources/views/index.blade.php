@@ -74,7 +74,7 @@
                         <i class="flaticon-trolley"></i>
                         <h3>{{__('page.24_7_client_support')}}</h3>
                         <p>{{__('page.talk_to_know_about_the_offer')}}</p>
-                        <a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank">
+                        <a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank" style="display: none;">
                             {{$setting->whatsapp}}
                         </a>
                     </div>
