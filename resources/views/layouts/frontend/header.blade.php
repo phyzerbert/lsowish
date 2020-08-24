@@ -16,7 +16,7 @@
                             </a>
                         </li> --}}
                         <li>
-                            <a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank">
+                            <a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank" style="display: none;">
                                 <i class='bx bxl-whatsapp'></i> {{$setting->whatsapp}}
                             </a>
                         </li>

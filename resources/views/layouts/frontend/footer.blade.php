@@ -18,7 +18,7 @@
                         {{-- <li>
                             44 Canal Center Plaza #200, Alexandria, VA 22314, USA
                         </li> --}}
-                        <li>
+                        <li style="display: none;">
                             <a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank">
                                 <span>WhatsApp:</span> {{$setting->whatsapp}}
                             </a>
