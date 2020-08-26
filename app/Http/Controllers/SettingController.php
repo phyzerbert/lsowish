@@ -32,6 +32,7 @@ class SettingController extends Controller
             'whatsapp' => $request->get('whatsapp'),
             'email' => $request->get('email'),
             'total_amount' => $request->get('total_amount'),
+            'invoice_description' => $request->get('invoice_description'),
             'about_us' => $request->get('about_us'),
             'warranty' => $request->get('warranty'),
             'header_text' => $request->get('header_text'),

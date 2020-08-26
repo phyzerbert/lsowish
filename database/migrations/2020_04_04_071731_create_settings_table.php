@@ -19,6 +19,7 @@ class CreateSettingsTable extends Migration
             $table->string('phone_number')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('total_amount')->nullable();
+            $table->text('invoice_description')->nullable();
             $table->string('address')->nullable();
             $table->text('about_us')->nullable();
             $table->text('warranty')->nullable();

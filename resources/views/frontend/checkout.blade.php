@@ -81,7 +81,7 @@
                         <h3 class="title">{{__('page.your_order')}}</h3>
                         <h5 class="text-primary">REF : {{$reference_no}}</h5>
                         <h6>{{date('d F Y h:i A')}}</h6>
-                        <h5 class="text-primary">Pre Order Payment Fees : <span>RM 2.00</span></h5>
+                        <h5 class="text-primary">Pre Order Payment Fees : <span>{{$setting->total_amount}}</span></h5>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -120,7 +120,7 @@
                                 </tr>
                             </tfoot>
                         </table>
-                        <p>{!! __('page.invoice_description') !!}</p>
+                        <p>{{$setting->invoice_description}}</p>
                         <a href="javascript:;" class="default-btn btn-block mt-3" id="btn_place" >{{__('page.place_order')}}
                             <i class="flaticon-right"></i>
                         </a>

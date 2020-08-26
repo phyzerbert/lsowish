@@ -35,6 +35,10 @@
                             <input type="text" name="total_amount" class="form-control" value="{{$setting->total_amount}}" />
                         </div>
                         <div class="form-group mt-3">
+                            <label for="">Checkout Page Footer Text</label>
+                            <textarea name="invoice_description" class="form-control" rows="3">{{$setting->invoice_description}}</textarea>
+                        </div>
+                        <div class="form-group mt-3">
                             <label for="">Header Text</label>
                             <input type="text" name="header_text" class="form-control" value="{{$setting->header_text}}" />
                         </div>
