@@ -31,6 +31,10 @@
                             <input type="text" name="whatsapp" class="form-control" value="{{$setting->whatsapp}}" />
                         </div>
                         <div class="form-group mt-3">
+                            <label for="">Total Amount</label>
+                            <input type="text" name="total_amount" class="form-control" value="{{$setting->total_amount}}" />
+                        </div>
+                        <div class="form-group mt-3">
                             <label for="">Header Text</label>
                             <input type="text" name="header_text" class="form-control" value="{{$setting->header_text}}" />
                         </div>
