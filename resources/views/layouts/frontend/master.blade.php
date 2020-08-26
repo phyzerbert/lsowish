@@ -3,7 +3,7 @@
 
     <head>
         <!-- Title -->
-        <title>{{config('app.name')}} | Wellness eCommerce Website</title>
+        <title>{{config('app.name')}}</title>
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
