@@ -31,6 +31,7 @@ class SettingController extends Controller
         Setting::find(1)->update([
             'whatsapp' => $request->get('whatsapp'),
             'email' => $request->get('email'),
+            'total_amount' => $request->get('total_amount'),
             'about_us' => $request->get('about_us'),
             'warranty' => $request->get('warranty'),
             'header_text' => $request->get('header_text'),

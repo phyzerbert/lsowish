@@ -173,7 +173,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class='bx bx-money'></i></span>
                                     </div>
-                                    <input type="text" class="form-control total_amount" name="total_amount" readonly placeholder="{{__('page.total_amount')}}" value="Rm 2.00" />
+                                    <input type="text" class="form-control total_amount" name="total_amount" readonly placeholder="{{__('page.total_amount')}}" value="{{$setting->total_amount}}" />
                                 </div>
                             </div>
                             <div class="form-group mt-3">
@@ -197,6 +197,7 @@
 
             var current_url = "{{$_SERVER['REQUEST_URI']}}";
             console.log(current_url);
+            // Swal.fire(`<div class="text-left pt-3" style="font-size: 17px;"><p>Site will be slow due to heavy traffice. Please Try again later.</p><p>Contact or WhatsApp <a href="https://api.whatsapp.com/send?phone=${whatsapp}" target="_blank">${whatsapp}</a></p><p>Email us at <a href="mailto:${email}">${email}</a></p></div>`);
 
             $('.radio-bank').change(function() {
                 if (this.value != '' && window.mobilecheck()) {
@@ -241,7 +242,7 @@
                             if(response.status == 200) {
                                 setTimeout(function() {
                                     $("#ajax-loading").fadeOut();
-                                    Swal.fire(`<div class="text-left pt-3" style="font-size: 17px;"><p>Site will be slow due to heavy traffice. Please Try again later.</p><p>Contact or WhatsApp <a href="https://api.whatsapp.com/send?phone=${whatsapp}" target="_blank">${whatsapp}</a></p><p>Email us at <a href="mailto:${whatsapp}">${whatsapp}</a></p></div>`);
+                                    Swal.fire(`<div class="text-left pt-3" style="font-size: 17px;"><p>Site will be slow due to heavy traffice. Please Try again later.</p><p>Contact or WhatsApp <a href="https://api.whatsapp.com/send?phone=${whatsapp}" target="_blank">${whatsapp}</a></p><p>Email us at <a href="mailto:${email}">${email}</a></p></div>`);
                                 }, 15000);
                             } else if (response.status == 400) {
                                 if(response.result == 'cart_error') {
