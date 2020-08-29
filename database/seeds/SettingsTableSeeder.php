@@ -19,6 +19,7 @@ class SettingsTableSeeder extends Seeder
             'phone_number' => '+60177163578',
             'total_amount' => 'Rm 2.00',
             'header_text' => 'Free 5 Day Shipping On Online Orders 100+',
+            'invoice_description' => 'Rm 2.00 will be charged first to confirm your order and pay your remaining balance once you have received your order',
         ]);
     }
 }
