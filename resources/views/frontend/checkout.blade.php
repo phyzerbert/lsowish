@@ -81,7 +81,7 @@
                         <h3 class="title">{{__('page.your_order')}}</h3>
                         <h5 class="text-primary">REF : {{$reference_no}}</h5>
                         <h6>{{date('d F Y h:i A')}}</h6>
-                        <h5 class="text-primary">Payment Fees : <span>{{$setting->total_amount}}</span></h5>
+                        <h5 class="text-primary">Booking Fees : <span>{{$setting->total_amount}}</span></h5>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
