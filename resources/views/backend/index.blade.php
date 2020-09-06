@@ -63,7 +63,7 @@
                                     <td class="phone_number">{{$item->customer->country->phone_code ?? ''}} {{$item->customer->phone_number ?? ''}}</td>
                                     <td class="address">{{$item->customer->address ?? ''}}</td>
                                     <td class="postcode">{{$item->customer->postcode ?? ''}}</td>
-                                    <td class="bank_id" data-id="{{$item->payment->bank_id}}">
+                                    <td class="bank_id" data-id="{{$item->payment->bank_id ?? ''}}">
                                         @if($item->payment->type == 2)
                                             Payoneer
                                         @else
