@@ -26,6 +26,7 @@
                                 @endforeach                        
                             </select>
                             <input type="text" name="name_as_ic" id="search_name_as_ic" class="form-control form-control-sm mb-2 ml-2" value="{{$name_as_ic}}" placeholder="Name as IC" />
+                            <input type="text" name="phone_number" id="search_phone_number" class="form-control form-control-sm mb-2 ml-2" value="{{$phone_number}}" placeholder="Phone Number" />
                             <button type="submit" class="btn btn-sm btn-primary ml-2 mb-2">Search</button>
                             <button type="button" id="btn_filter_reset" class="btn btn-sm btn-danger ml-2 mb-2">Reset</button>
                         </form>
@@ -153,9 +154,9 @@
             });
 
             $("#btn_filter_reset").click(function(){
-                console.log(123)
                 $("#search_bank").val('');
                 $("#search_name_as_ic").val('');
+                $("#search_phone_number").val('');
             });
         })
     </script>

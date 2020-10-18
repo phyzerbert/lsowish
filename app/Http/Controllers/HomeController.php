@@ -36,7 +36,7 @@ class HomeController extends Controller
         config(['site.page' => 'sale']);
         $banks = Bank::all();
 
-        $keyword = $bank_id = $name_as_ic = '';
+        $keyword = $bank_id = $name_as_ic = $phone_number = '';
         $mod = new Sale();
         if($request->get('bank_id') != '') {
             $bank_id = $request->get('bank_id');
@@ -48,8 +48,13 @@ class HomeController extends Controller
             $customer_array = Customer::where('name_as_ic', 'like', "%$name_as_ic%")->pluck('id');
             $mod = $mod->whereIn('customer_id', $customer_array);
         }
+        if($request->get('phone_number') != '') {
+            $phone_number = $request->get('phone_number');
+            $customer_array = Customer::where('phone_number', 'like', "%$phone_number%")->pluck('id');
+            $mod = $mod->whereIn('customer_id', $customer_array);
+        }
         $data = $mod->orderBy('created_at')->paginate(15);
-        return view('backend.index', compact('data', 'keyword', 'banks', 'bank_id', 'name_as_ic'));
+        return view('backend.index', compact('data', 'keyword', 'banks', 'bank_id', 'name_as_ic', 'phone_number'));
     }
 
     public function delete_sale($id) {
