@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="tile">
                     <div class="tile-header">
-                        <form action="" class="form-inline">
+                        <form action="" method="POST" class="form-inline">
                             @csrf
                             <select name="bank_id" id="search_bank" class="form-control form-control-sm mb-2">
                                 <option value="">Select Bank</option>
