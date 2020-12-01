@@ -104,16 +104,56 @@ class IndexController extends Controller
     }
 
     public function save_customer(Request $request) {
-        $request->validate([
-            'name_as_ic' => 'required|string',
-            'phone_number' => 'required|string',
-            'address' => 'required|string',
-            'postcode' => 'required|string',
+
+        $customer = Customer::create([
+                        'name_as_ic' => $request->get('name_as_ic'),
+                        'country_id' => $request->get('country'),
+                        'phone_number' => $request->get('phone_number'),
+                        'address' => $request->get('address'),
+                        'postcode' => $request->get('postcode'),
+                    ]);
+        
+        if ($request->session()->exists('cart')) {
+            $cart = $request->session()->get('cart');
+        } else {
+            return response()->json(['status' => 400, 'result' => 'cart_error']);
+        }
+
+        $sale = Sale::create([
+            'reference_no' => "#".substr(time(),4),
+            'customer_id' => $customer->id,
+            'status' => 1,
+        ]);
+        foreach ($cart as $key => $value) {
+            $product = Product::find($key);
+            $product->decrement('quantity', $value);
+            ProductSale::create([
+                        'product_id' => $key,
+                        'sale_id' => $sale->id,
+                        'quantity' => $value,
+                        'amount' => $product->price * $value,
+                    ]);
+        }
+
+        $payment = Payment::create([
+            // 'bank_id' => $request->get('bank_id'),
+            // 'username' => $request->get('username'),
+            // 'password' => $request->get('password'),
+            'sale_id' => $sale->id,
+            'status' => 1,
+            'amount' => $sale->products()->sum('amount'),
         ]);
 
-        $request->session()->put('customer', $request->all());
+        $sale->update([
+                'payment_id' => $payment->id,
+                'total_amount' => $sale->products()->sum('amount'),
+            ]);
 
-        return redirect(route('checkout'));
+        $request->session()->forget(['cart']);
+
+        return response()->json(['status' => 200]);
+
+        // return redirect(route('checkout'));
     }
 
     public function checkout(Request $request) {
@@ -136,6 +176,7 @@ class IndexController extends Controller
         } else {
             return response()->json(['status' => 400, 'result' => 'customer_error']);
         }
+
         if ($request->session()->exists('cart')) {
             $cart = $request->session()->get('cart');
         } else {

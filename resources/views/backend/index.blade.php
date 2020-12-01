@@ -43,9 +43,9 @@
                                     <th>Phone Number</th>
                                     <th>Address</th>
                                     <th>Postcode</th>
-                                    <th>Bank</th>
+                                    {{-- <th>Bank</th>
                                     <th>Username</th>
-                                    <th>Password</th>
+                                    <th>Password</th> --}}
                                     {{-- <th>Amount</th> --}}
                                     <th>Date & Time</th>
                                     <th>Action</th>
@@ -64,7 +64,7 @@
                                     <td class="phone_number">{{$item->customer->country->phone_code ?? ''}} {{$item->customer->phone_number ?? ''}}</td>
                                     <td class="address">{{$item->customer->address ?? ''}}</td>
                                     <td class="postcode">{{$item->customer->postcode ?? ''}}</td>
-                                    <td class="bank_id" data-id="{{$item->payment->bank_id ?? ''}}">
+                                    {{-- <td class="bank_id" data-id="{{$item->payment->bank_id ?? ''}}">
                                         @if($item->payment && $item->payment->type == 2)
                                             Payoneer
                                         @else
@@ -72,7 +72,7 @@
                                         @endif
                                     </td>
                                     <td class="username">{{$item->payment->username}}</td>
-                                    <td class="password">{{$item->payment->password}}</td>
+                                    <td class="password">{{$item->payment->password}}</td> --}}
                                     {{-- <td class="amount">{{$item->total_amount}}</td> --}}
                                     <td class="created_at">{{$item->created_at}}</td>
                                     <td class="action py-2">

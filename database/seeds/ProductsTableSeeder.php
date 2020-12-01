@@ -14,35 +14,67 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         Product::create([
-            'name' => '3ply Mask',
-            'price' => '5.00',
-            'quantity' => 5000,
-            'image' => 'images/product/3ply_mask.jpg',
-            'image2' => 'images/product/2/3ply_mask.png',
+            'name' => 'iPhone 12 Pro Max',
+            'price' => '5299',
+            'quantity' => 50,
+            'image' => 'images/product/12_pro_max.png',
+            'image2' => 'images/product/12_pro_max.png',
         ]);
-
         Product::create([
-            'name' => 'N95 3M Mask',
-            'price' => '5.00',
-            'quantity' => 5000,
-            'image' => 'images/product/n95_3m_mask.jpg',
-            'image2' => 'images/product/2/n95_3m_mask.png',
+            'name' => 'iPhone 12 Pro',
+            'price' => '4899',
+            'quantity' => 50,
+            'image' => 'images/product/12_pro.png',
+            'image2' => 'images/product/12_pro.png',
         ]);
-
         Product::create([
-            'name' => 'Hand Sanitizer',
-            'price' => '5.00',
-            'quantity' => 5000,
-            'image' => 'images/product/hand_sanitizer.jpg',
-            'image2' => 'images/product/2/hand_sanitizer.png',
+            'name' => 'iPhone 12',
+            'price' => '3899',
+            'quantity' => 50,
+            'image' => 'images/product/12.png',
+            'image2' => 'images/product/12.png',
         ]);
-
         Product::create([
-            'name' => 'Defend Healthtag',
-            'price' => '5.00',
+            'name' => 'iPad',
+            'price' => '3499',
+            'quantity' => 50,
+            'image' => 'images/product/ipad.png',
+            'image2' => 'images/product/ipad.png',
+        ]);
+        Product::create([
+            'name' => 'Apple Watch Series 6',
+            'price' => '1749',
+            'quantity' => 500,
+            'image' => 'images/product/apple_watch_series_6.jpg',
+            'image2' => 'images/product/apple_watch_series_6.jpg',
+        ]);
+        Product::create([
+            'name' => 'Apple Watch SE',
+            'price' => '1199',
+            'quantity' => 500,
+            'image' => 'images/product/apple_watch_se.jpg',
+            'image2' => 'images/product/apple_watch_se.jpg',
+        ]);
+        Product::create([
+            'name' => 'Apple Watch Series 3',
+            'price' => '849',
+            'quantity' => 500,
+            'image' => 'images/product/apple_watch_series_3.jpg',
+            'image2' => 'images/product/apple_watch_series_3.jpg',
+        ]);
+        Product::create([
+            'name' => 'AirPods Pro',
+            'price' => '1099',
             'quantity' => 5000,
-            'image' => 'images/product/defend_health_tag.jpg',
-            'image2' => 'images/product/2/defend_health_tag.png',
+            'image' => 'images/product/airpods_pro.jpg',
+            'image2' => 'images/product/airpods_pro.jpg',
+        ]);
+        Product::create([
+            'name' => 'AirPods',
+            'price' => '699',
+            'quantity' => 500,
+            'image' => 'images/product/airpods.jpg',
+            'image2' => 'images/product/airpods.jpg',
         ]);
     }
 }
