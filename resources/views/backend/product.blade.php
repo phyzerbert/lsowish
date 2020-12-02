@@ -35,7 +35,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td class="name" data-value="{{$item->name}}"><span>{{$item->name}}</span></td>
-                                <td class="price" data-value="{{$item->price}}"><span>${{$item->price}}</span></td>
+                                <td class="price" data-value="{{$item->price}}"><span>RM {{$item->price}}</span></td>
                                 {{-- <td class="quantity" data-value="{{$item->quantity}}">{{$item->quantity}}</td> --}}
                                 <td>{{$item->sales()->sum('quantity')}}</td>
                                 <td class="action py-2">
