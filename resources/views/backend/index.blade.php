@@ -88,8 +88,7 @@
                         </table>
                         <div class="clearfix">
                             <div class="float-left" style="margin: 0;">
-                                <p>Total <strong style="color: red">{{ $data->total() }}</strong>
-                                    Items</p>
+                                <p>Total <strong style="color: red">{{ $data->total() }}</strong> Items</p>
                             </div>
                             <div class="float-right" style="margin: 0;">
                                 {!! $data->appends(['bank_id' => $bank_id])->links() !!}
